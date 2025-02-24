@@ -1,0 +1,286 @@
+[gd_scene load_steps=18 format=3 uid="uid://ocuc7mbgccl5"]
+
+[ext_resource type="Theme" uid="uid://dgngyebyjcxyl" path="res://scenes/menu_theme.tres" id="1_pbt0v"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_ohxnf"]
+[ext_resource type="StyleBox" uid="uid://cjv2cpd6huupu" path="res://themes/style_boxes/pause_menu_seperator_stylebox.tres" id="3_tlkq7"]
+[ext_resource type="PackedScene" uid="uid://de0j1mtiy1lu7" path="res://scenes/ui/main_pause_menu.tscn" id="4_uyt7p"]
+[ext_resource type="Script" path="res://scripts/ui/mbwozi_label.gd" id="8_2o81t"]
+[ext_resource type="Script" path="res://scripts/ui/time_label.gd" id="9_l8ho1"]
+
+[sub_resource type="Gradient" id="Gradient_nrmvj"]
+colors = PackedColorArray(0, 0, 0, 1, 0.0782667, 0.034, 0.2, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_blpyd"]
+gradient = SubResource("Gradient_nrmvj")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 0.7)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mb3f"]
+texture = SubResource("GradientTexture2D_blpyd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kjxs"]
+bg_color = Color(0.35, 0.0455, 0.070875, 1)
+border_color = Color(0.2, 0.2, 0.2, 0)
+border_blend = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4fcuu"]
+
+[sub_resource type="Gradient" id="Gradient_x1652"]
+colors = PackedColorArray(0.1326, 0.149883, 0.34, 1, 0.3822, 0.432017, 0.98, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0qu77"]
+gradient = SubResource("Gradient_x1652")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6knpq"]
+texture = SubResource("GradientTexture2D_0qu77")
+texture_margin_bottom = 4.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8cpsx"]
+gradient = SubResource("Gradient_nrmvj")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.494624, 0.241935)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfnwd"]
+texture = SubResource("GradientTexture2D_8cpsx")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_e8ykg"]
+content_margin_left = 0.0
+content_margin_right = 0.0
+color = Color(0.2646, 0.45339, 0.63, 0.290196)
+thickness = 3
+vertical = true
+
+[node name="PauseMenu" type="PanelContainer" node_paths=PackedStringArray("MENU_CONTAINER", "MENU_TITLE_LABEL", "MENU_TITLE_CONTAINER")]
+process_mode = 3
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pbt0v")
+script = ExtResource("2_ohxnf")
+MENU_CONTAINER = NodePath("MenuVBox/CenterMargin/MenuContainer")
+MENU_TITLE_LABEL = NodePath("MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer/MarginContainer/MenuTitleLabel")
+MENU_TITLE_CONTAINER = NodePath("MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer")
+MAIN_PAUSE_MENU_SCENE = ExtResource("4_uyt7p")
+
+[node name="MenuVBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopPanel" type="PanelContainer" parent="MenuVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8mb3f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/TopPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.64
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 28
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.3822, 0.432017, 0.98, 1)
+theme_override_font_sizes/font_size = 42
+text = "MENU"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuTitleControl" type="Control" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuTitleContainer" type="PanelContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl"]
+z_index = 1
+layout_mode = 2
+offset_left = -3.0
+offset_top = -14.0
+offset_right = 304.0
+offset_bottom = 57.0
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_2kjxs")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="MenuTitleLabel" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 34
+text = "Title"
+
+[node name="VSeparator" type="VSeparator" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4fcuu")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 101
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.463667, 0.091, 1)
+text = "‖  Area Name"
+
+[node name="CenterContainer2" type="CenterContainer" parent="MenuVBox/TopPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 0.5
+
+[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/CenterContainer2"]
+layout_mode = 2
+text = "Level Name"
+
+[node name="HSeparator" type="HSeparator" parent="MenuVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = ExtResource("3_tlkq7")
+
+[node name="CenterMargin" type="MarginContainer" parent="MenuVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.16
+mouse_filter = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 17
+
+[node name="MenuContainer" type="PanelContainer" parent="MenuVBox/CenterMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MainPauseMenu" parent="MenuVBox/CenterMargin/MenuContainer" instance=ExtResource("4_uyt7p")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="MenuVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxTexture_6knpq")
+
+[node name="BottomPanel" type="PanelContainer" parent="MenuVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cfnwd")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/BottomPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.22
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+
+[node name="KudosHBox" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/KudosHBox"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.47, 0.25944, 0.0188, 1)
+theme_override_font_sizes/font_size = 42
+text = "kudos"
+
+[node name="KudosCounterLabel" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/KudosHBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.98, 0.54096, 0.0392, 1)
+theme_override_colors/font_outline_color = Color(0.47, 0.25944, 0.0188, 1)
+theme_override_constants/outline_size = 16
+text = "0"
+script = ExtResource("8_2o81t")
+
+[node name="TimeHBox" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TimeHBox"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.0196078, 0.254902, 0.470588, 1)
+theme_override_font_sizes/font_size = 42
+text = "time"
+
+[node name="TimeLabel" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TimeHBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.04, 0.536, 1, 1)
+theme_override_colors/font_outline_color = Color(0.0196078, 0.254902, 0.470588, 1)
+theme_override_constants/outline_size = 16
+text = "00:00:00"
+script = ExtResource("9_l8ho1")
+
+[node name="VSeparator" type="VSeparator" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+theme_override_styles/separator = SubResource("StyleBoxLine_e8ykg")
+
+[node name="VSeparator2" type="VSeparator" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_e8ykg")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.8
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.4266, 0.59013, 0.79, 1)
+theme_override_font_sizes/font_size = 40
+text = "Button description"

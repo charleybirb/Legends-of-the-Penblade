@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ufdwha253igk"]
+
+[node name="SubMenuButton" type="PanelContainer"]
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"

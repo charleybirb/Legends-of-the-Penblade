@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyrqjbxw82uxg"]
+
+[sub_resource type="Gradient" id="Gradient_wjq5a"]
+offsets = PackedFloat32Array(0, 0.0807453, 0.192547, 0.509317, 0.801242, 0.906832, 1)
+colors = PackedColorArray(0.513726, 0.627451, 0.945098, 0, 0.513726, 0.627451, 0.945098, 0.443137, 0.513726, 0.627451, 0.945098, 1, 0.513726, 0.627451, 0.945098, 1, 0.513726, 0.627451, 0.945098, 1, 0.513726, 0.627451, 0.945098, 0.443137, 0.513726, 0.627451, 0.945098, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gsmd8"]
+gradient = SubResource("Gradient_wjq5a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4y3c"]
+texture = SubResource("GradientTexture2D_gsmd8")
+
+[sub_resource type="Gradient" id="Gradient_7wbtg"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.10559, 0.267081, 0.503106, 0.751553, 0.89441, 1)
+colors = PackedColorArray(0, 0, 0, 0.0470588, 0, 0, 0, 0.486275, 0, 0, 0, 0.87451, 0, 0, 0, 1, 0, 0, 0, 0.843137, 0, 0, 0, 0.486275, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j1uhq"]
+gradient = SubResource("Gradient_7wbtg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1srre"]
+texture = SubResource("GradientTexture2D_j1uhq")
+
+[node name="MenulessPauseScreen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopBorder" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j4y3c")
+
+[node name="Background" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1srre")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Background"]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="PauseLabel" type="Label" parent="VBoxContainer/Background/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.6, 0.04, 1)
+theme_override_font_sizes/font_size = 70
+text = "P    A    U    S    E"
+
+[node name="BottomBorder" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j4y3c")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsma3gawn3d00"]
+
+[ext_resource type="Script" path="res://scripts/ui/buttons/pause_menu_button.gd" id="1_kqpwj"]
+
+[node name="PauseMenuButton" type="PanelContainer" node_paths=PackedStringArray("BUTTON_LABEL")]
+mouse_filter = 1
+script = ExtResource("1_kqpwj")
+BUTTON_LABEL = NodePath("MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"

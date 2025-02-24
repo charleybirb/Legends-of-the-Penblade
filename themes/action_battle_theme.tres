@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://4k66t1mcc4m7"]
+
+[ext_resource type="StyleBox" uid="uid://bfxogcjpk0lwp" path="res://themes/style_boxes/corner_battle_menu_battle.tres" id="1_rmul8"]
+[ext_resource type="StyleBox" uid="uid://b5b11vnsj254s" path="res://themes/style_boxes/battle_inactive_stylebox.tres" id="2_cv8u3"]
+
+[resource]
+Label/colors/font_color = Color(1, 0.76, 0.76, 1)
+Label/font_sizes/font_size = 32
+Panel/styles/panel = ExtResource("1_rmul8")
+PanelContainer/styles/panel = ExtResource("2_cv8u3")
+RichTextLabel/colors/default_color = Color(0.862745, 0.2, 0.321569, 1)
+RichTextLabel/font_sizes/bold_italics_font_size = 24
+RichTextLabel/font_sizes/normal_font_size = 24

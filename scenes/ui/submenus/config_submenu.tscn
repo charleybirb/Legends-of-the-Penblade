@@ -1,0 +1,391 @@
+[gd_scene load_steps=14 format=3 uid="uid://bmghdjq68ascg"]
+
+[ext_resource type="Theme" uid="uid://dgngyebyjcxyl" path="res://scenes/menu_theme.tres" id="1_tlrem"]
+[ext_resource type="Script" path="res://scripts/ui/submenu.gd" id="1_xx4cf"]
+[ext_resource type="Theme" uid="uid://di1av1pfheygj" path="res://themes/pause_menu_button_theme.tres" id="3_1vyyr"]
+[ext_resource type="Script" path="res://scenes/submenu_button_component.gd" id="3_fvhm1"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/fps_button.gd" id="3_kb0q8"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/fullscreen_button.gd" id="6_7drhb"]
+[ext_resource type="Script" path="res://scripts/ui/left_element_component.gd" id="6_jhdnu"]
+[ext_resource type="Script" path="res://scripts/ui/right_element_component.gd" id="7_jwe8p"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/v_sensitivity_buton.gd" id="7_stqfv"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/h_sensitivity_button.gd" id="8_mhl50"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/back_button.gd" id="9_jqmcw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kixkk"]
+bg_color = Color(0.34902, 0.0470588, 0.0705882, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.2, 0.2, 0.2, 0)
+border_blend = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0cjff"]
+
+[node name="ConfigSubMenu" type="PanelContainer" node_paths=PackedStringArray("back_button")]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_tlrem")
+script = ExtResource("1_xx4cf")
+back_button = NodePath("MarginContainer/HBoxContainer/ButtonVBox/Control/HBoxContainer/BackButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ButtonVBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_1vyyr")
+
+[node name="SubMenuItem" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="FPSButton" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem" node_paths=PackedStringArray("BUTTON_LABEL", "OPTION_MARKER", "OPTIONS_HBOX")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+mouse_filter = 1
+script = ExtResource("3_kb0q8")
+BUTTON_LABEL = NodePath("MarginContainer/Label")
+OPTION_MARKER = NodePath("../OptionsHBox/Control/OptionMarker")
+OPTIONS_HBOX = NodePath("../OptionsHBox")
+
+[node name="LeftElementComponent" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/FPSButton"]
+script = ExtResource("6_jhdnu")
+
+[node name="SubMenuButtonComponent" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/FPSButton"]
+script = ExtResource("3_fvhm1")
+BUTTON_TITLE = "FPS"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/FPSButton"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/FPSButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"
+
+[node name="OptionsHBox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/OptionsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightElementComponent" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/OptionsHBox/Control"]
+script = ExtResource("7_jwe8p")
+
+[node name="OptionMarker" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/OptionsHBox/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kixkk")
+
+[node name="Option1" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "30"
+
+[node name="RightElementComponent2" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/OptionsHBox/Option1"]
+script = ExtResource("7_jwe8p")
+
+[node name="Option2" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "60"
+
+[node name="RightElementComponent3" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem/OptionsHBox/Option2"]
+script = ExtResource("7_jwe8p")
+
+[node name="SubMenuItem2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="FullscreenButton" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2" node_paths=PackedStringArray("BUTTON_LABEL", "OPTION_MARKER", "OPTIONS_HBOX")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+mouse_filter = 1
+script = ExtResource("6_7drhb")
+BUTTON_LABEL = NodePath("MarginContainer/Label")
+OPTION_MARKER = NodePath("../OptionsHBox/Control/OptionMarker")
+OPTIONS_HBOX = NodePath("../OptionsHBox")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/FullscreenButton"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/FullscreenButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"
+
+[node name="SubMenuButtonComponent" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/FullscreenButton"]
+script = ExtResource("3_fvhm1")
+BUTTON_TITLE = "FULLSCREEN"
+
+[node name="LeftElementComponent2" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/FullscreenButton"]
+script = ExtResource("6_jhdnu")
+
+[node name="OptionsHBox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/OptionsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightElementComponent4" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/OptionsHBox/Control"]
+script = ExtResource("7_jwe8p")
+
+[node name="OptionMarker" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/OptionsHBox/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kixkk")
+
+[node name="Option1" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "FULLSCREEN"
+
+[node name="RightElementComponent5" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/OptionsHBox/Option1"]
+script = ExtResource("7_jwe8p")
+
+[node name="Option2" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "WINDOWED"
+
+[node name="RightElementComponent6" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem2/OptionsHBox/Option2"]
+script = ExtResource("7_jwe8p")
+
+[node name="SubMenuItem3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="VSensitivityButton" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3" node_paths=PackedStringArray("BUTTON_LABEL", "OPTION_MARKER", "OPTIONS_HBOX")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+mouse_filter = 1
+script = ExtResource("7_stqfv")
+BUTTON_LABEL = NodePath("MarginContainer/Label")
+OPTION_MARKER = NodePath("../OptionsHBox/Control/OptionMarker")
+OPTIONS_HBOX = NodePath("../OptionsHBox")
+
+[node name="LeftElementComponent3" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/VSensitivityButton"]
+script = ExtResource("6_jhdnu")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/VSensitivityButton"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/VSensitivityButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"
+
+[node name="SubMenuButtonComponent" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/VSensitivityButton"]
+script = ExtResource("3_fvhm1")
+BUTTON_TITLE = "Vertical Sensitivity"
+
+[node name="OptionsHBox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightElementComponent7" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox/Control"]
+script = ExtResource("7_jwe8p")
+
+[node name="OptionMarker" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kixkk")
+
+[node name="Option1" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "LOW"
+
+[node name="RightElementComponent8" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox/Option1"]
+script = ExtResource("7_jwe8p")
+
+[node name="Option2" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "MEDIUM"
+
+[node name="RightElementComponent9" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox/Option2"]
+script = ExtResource("7_jwe8p")
+
+[node name="Option3" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "HIGH"
+
+[node name="RightElementComponent10" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem3/OptionsHBox/Option3"]
+script = ExtResource("7_jwe8p")
+
+[node name="SubMenuItem4" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="HSensitivityButton" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4" node_paths=PackedStringArray("BUTTON_LABEL", "OPTION_MARKER", "OPTIONS_HBOX")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+mouse_filter = 1
+script = ExtResource("8_mhl50")
+BUTTON_LABEL = NodePath("MarginContainer/Label")
+OPTION_MARKER = NodePath("../OptionsHBox/Control/OptionMarker")
+OPTIONS_HBOX = NodePath("../OptionsHBox")
+
+[node name="LeftElementComponent" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/HSensitivityButton"]
+script = ExtResource("6_jhdnu")
+
+[node name="SubMenuButtonComponent" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/HSensitivityButton"]
+script = ExtResource("3_fvhm1")
+BUTTON_TITLE = "Horizontal Sensitivy"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/HSensitivityButton"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/HSensitivityButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"
+
+[node name="OptionsHBox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightElementComponent11" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox/Control"]
+script = ExtResource("7_jwe8p")
+
+[node name="OptionMarker" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kixkk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Option1" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "LOW"
+
+[node name="RightElementComponent12" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox/Option1"]
+script = ExtResource("7_jwe8p")
+
+[node name="Option2" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "MEDIUM"
+
+[node name="RightElementComponent13" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox/Option2"]
+script = ExtResource("7_jwe8p")
+
+[node name="Option3" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 6
+text = "HIGH"
+
+[node name="RightElementComponent14" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/SubMenuItem4/OptionsHBox/Option3"]
+script = ExtResource("7_jwe8p")
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/ButtonVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" type="PanelContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/Control/HBoxContainer" node_paths=PackedStringArray("BUTTON_LABEL")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.2
+mouse_filter = 1
+script = ExtResource("9_jqmcw")
+BUTTON_LABEL = NodePath("MarginContainer/Label")
+
+[node name="LeftElementComponent5" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/Control/HBoxContainer/BackButton"]
+script = ExtResource("6_jhdnu")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ButtonVBox/Control/HBoxContainer/BackButton"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ButtonVBox/Control/HBoxContainer/BackButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"
+
+[node name="SubMenuButtonComponent" type="Node" parent="MarginContainer/HBoxContainer/ButtonVBox/Control/HBoxContainer/BackButton"]
+script = ExtResource("3_fvhm1")
+BUTTON_TITLE = "Back"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/ButtonVBox/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0cjff")

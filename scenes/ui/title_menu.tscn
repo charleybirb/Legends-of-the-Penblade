@@ -1,0 +1,177 @@
+[gd_scene load_steps=11 format=3 uid="uid://buk6mte67edso"]
+
+[sub_resource type="Theme" id="Theme_2djn2"]
+Label/colors/font_color = Color(0.67, 0.67, 0.67, 0.92549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l54q3"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sqe13"]
+color = Color(0.79, 0.79, 0.79, 0.909804)
+thickness = 4
+
+[sub_resource type="Gradient" id="Gradient_75s7b"]
+colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 0.368627)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o3ahr"]
+gradient = SubResource("Gradient_75s7b")
+width = 16
+height = 16
+fill_from = Vector2(0.3, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0kpy"]
+texture = SubResource("GradientTexture2D_o3ahr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdupd"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_q3alv"]
+offsets = PackedFloat32Array(0.304348, 0.838509)
+colors = PackedColorArray(0.8, 0.8, 0.8, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kyh6a"]
+gradient = SubResource("Gradient_q3alv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfrsd"]
+texture = SubResource("GradientTexture2D_kyh6a")
+
+[node name="TitleMenu" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2djn2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_l54q3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_bottom = 139
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.513233, 0.513233, 0.513233, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.758192, 0.758192, 0.758192, 1)
+theme_override_constants/line_spacing = -23
+theme_override_constants/outline_size = 19
+theme_override_constants/shadow_outline_size = 95
+theme_override_font_sizes/font_size = 100
+text = "Legends
+of   the 
+Penblade"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 1209
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = -7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 44
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.65098, 0.65098, 0.65098, 1)
+theme_override_font_sizes/font_size = 40
+text = "DEVELOPED    BY"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.65, 0.65, 0.65, 1)
+theme_override_font_sizes/font_size = 50
+text = "BIRBLESOFT"
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sqe13")
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 58
+theme_override_constants/margin_top = 90
+
+[node name="ButtonVBox" type="VBoxContainer" parent="VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 71
+
+[node name="NewGameButton" type="PanelContainer" parent="VBoxContainer/MarginContainer3/ButtonVBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_g0kpy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/ButtonVBox/NewGameButton"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer3/ButtonVBox/NewGameButton/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer3/ButtonVBox/NewGameButton/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fdupd")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/ButtonVBox/NewGameButton/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 50
+text = "N   E   W         G   A   M   E"
+
+[node name="Underline" type="Panel" parent="VBoxContainer/MarginContainer3/ButtonVBox/NewGameButton/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mfrsd")
+
+[node name="LoadButton" type="PanelContainer" parent="VBoxContainer/MarginContainer3/ButtonVBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_g0kpy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/ButtonVBox/LoadButton"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer3/ButtonVBox/LoadButton/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer3/ButtonVBox/LoadButton/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(69, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fdupd")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/ButtonVBox/LoadButton/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 50
+text = "L   O   A   D"
+
+[node name="Underline" type="Panel" parent="VBoxContainer/MarginContainer3/ButtonVBox/LoadButton/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mfrsd")

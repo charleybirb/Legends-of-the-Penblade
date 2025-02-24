@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8ts6xd75p5n4"]
+
+[ext_resource type="Script" path="res://scripts/enemy/enemy_orb.gd" id="1_da2us"]
+[ext_resource type="PackedScene" uid="uid://s1io4f0vay7k" path="res://models/nature_creature_light.blend" id="2_wqa4c"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2plf8"]
+height = 1.57301
+radius = 0.493272
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kdmxo"]
+height = 3.49258
+radius = 17.2415
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0a6o"]
+radius = 0.115087
+height = 0.536201
+
+[node name="EnemyOrb" type="CharacterBody3D" node_paths=PackedStringArray("HITBOX", "DETECT_AREA", "FOCUS_POINT")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_da2us")
+HITBOX = NodePath("HitboxArea")
+DETECT_AREA = NodePath("DetectArea")
+FOCUS_POINT = NodePath("FocusPoint")
+
+[node name="nature_creature_light" parent="." instance=ExtResource("2_wqa4c")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="HitboxArea" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.887315, 0)
+shape = SubResource("CylinderShape3D_2plf8")
+
+[node name="DetectArea" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64355, 0)
+shape = SubResource("CylinderShape3D_kdmxo")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+
+[node name="Idle" type="Node" parent="StateMachine/MoveState"]
+
+[node name="Run" type="Node" parent="StateMachine/MoveState"]
+
+[node name="Jump" type="Node" parent="StateMachine/MoveState"]
+
+[node name="Attack" type="Node" parent="StateMachine/MoveState"]
+
+[node name="Fall" type="Node" parent="StateMachine/MoveState"]
+
+[node name="Land" type="Node" parent="StateMachine/MoveState"]
+
+[node name="AlertState" type="Node" parent="StateMachine"]
+
+[node name="Idle" type="Node" parent="StateMachine/AlertState"]
+
+[node name="Search" type="Node" parent="StateMachine/AlertState"]
+
+[node name="Chase" type="Node" parent="StateMachine/AlertState"]
+
+[node name="Attack" type="Node" parent="StateMachine/AlertState"]
+
+[node name="AttackState" type="Node" parent="StateMachine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258406, -0.0211002)
+shape = SubResource("CapsuleShape3D_q0a6o")
+
+[node name="FocusPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98941, -1.24849)

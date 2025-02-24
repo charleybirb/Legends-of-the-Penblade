@@ -1,0 +1,166 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce0rbhsjqoww1"]
+
+[ext_resource type="Theme" uid="uid://4k66t1mcc4m7" path="res://themes/action_battle_theme.tres" id="1_csnrx"]
+[ext_resource type="Theme" uid="uid://dbii4nweh15un" path="res://themes/command_menu_theme.tres" id="1_soahu"]
+[ext_resource type="StyleBox" uid="uid://n8x78il7dvkg" path="res://themes/style_boxes/command_active_stylebox.tres" id="2_et01j"]
+[ext_resource type="Script" path="res://scripts/ui/action_menu.gd" id="2_o3gtc"]
+[ext_resource type="StyleBox" uid="uid://jcekieuew2t1" path="res://themes/style_boxes/action_menu_title_battle.tres" id="3_ejnqo"]
+[ext_resource type="StyleBox" uid="uid://w13s6nln1cau" path="res://themes/style_boxes/action_menu_title_normal.tres" id="3_uksc7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1085"]
+
+[node name="ActionMenu" type="PanelContainer" node_paths=PackedStringArray("BUTTON1", "BUTTON2", "BUTTON3", "BUTTON4", "TITLE_PANEL")]
+process_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -308.0
+offset_right = 298.0
+grow_vertical = 0
+theme = ExtResource("1_soahu")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l1085")
+script = ExtResource("2_o3gtc")
+BUTTON1 = NodePath("MarginContainer/VBoxContainer/AttackPanel")
+BUTTON2 = NodePath("MarginContainer/VBoxContainer/MagicPanel")
+BUTTON3 = NodePath("MarginContainer/VBoxContainer/ItemsPanel")
+BUTTON4 = NodePath("MarginContainer/VBoxContainer/StylesPanel")
+NORMAL_THEME = ExtResource("1_soahu")
+BATTLE_THEME = ExtResource("1_csnrx")
+TITLE_PANEL = NodePath("MarginContainer/VBoxContainer/TitlePanel")
+TITLE_PANEL_BATTLE_STYLEBOX = ExtResource("3_ejnqo")
+TITLE_PANEL_NORMAL_STYLEBOX = ExtResource("3_uksc7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 46
+theme_override_constants/margin_bottom = 46
+
+[node name="BackgroundContainer" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="BackgroundPanel" type="Panel" parent="MarginContainer/BackgroundContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 165.0
+offset_top = 40.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -6
+
+[node name="TitlePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+theme_override_styles/panel = ExtResource("3_uksc7")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TitlePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TitlePanel/MarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TitlePanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.42
+text = "ACTIONS"
+
+[node name="Corner" type="Panel" parent="MarginContainer/VBoxContainer/TitlePanel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="AttackPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_et01j")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/AttackPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/AttackPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="AttackLabel" type="Label" parent="MarginContainer/VBoxContainer/AttackPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Attack"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/AttackPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MagicPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MagicPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MagicPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="MagicLabel" type="Label" parent="MarginContainer/VBoxContainer/MagicPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Magic"
+
+[node name="MagicLabel2" type="Label" parent="MarginContainer/VBoxContainer/MagicPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "▸"
+
+[node name="ItemsPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ItemsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ItemsPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemLabel" type="Label" parent="MarginContainer/VBoxContainer/ItemsPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Items"
+
+[node name="ItemLabel2" type="Label" parent="MarginContainer/VBoxContainer/ItemsPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "▸"
+
+[node name="StylesPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/StylesPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/StylesPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="StylesLabel" type="Label" parent="MarginContainer/VBoxContainer/StylesPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Styles"
+
+[node name="StylesLabel2" type="Label" parent="MarginContainer/VBoxContainer/StylesPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "▸"
