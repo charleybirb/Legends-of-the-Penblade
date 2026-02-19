@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bpsmkiruri5g3"]
+
+[ext_resource type="PackedScene" uid="uid://dtiqwk2mfgy4n" path="res://assets/models/playground.blend" id="1_c5jm4"]
+[ext_resource type="PackedScene" uid="uid://38cpuckweh1l" path="res://scenes/player.tscn" id="2_47hw6"]
+
+[node name="Playground" type="Node3D" unique_id=249492111]
+
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=1801960752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7243509, 7)
+
+[node name="playground" parent="." unique_id=225764597 instance=ExtResource("1_c5jm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6332443, 0)
+
+[node name="Player" parent="." unique_id=1355940440 instance=ExtResource("2_47hw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6334059, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=708545469]
+transform = Transform3D(1, 0, 0, 0, 0.24769232, 0.96883875, 0, -0.96883875, 0.24769232, 0, 0, 0)

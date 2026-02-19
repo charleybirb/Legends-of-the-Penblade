@@ -1,6 +1,6 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ckqwtc2xpuxtq"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckqwtc2xpuxtq"]
 
-[ext_resource type="Texture2D" uid="uid://dnvb88bu53vsi" path="res://images/stones.png" id="1_tpqsq"]
+[ext_resource type="Texture2D" uid="uid://dnvb88bu53vsi" path="res://assets/images/stones.png" id="1_tpqsq"]
 
 [resource]
 shading_mode = 0

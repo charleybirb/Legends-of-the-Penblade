@@ -1,25 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://ofs3ql6m51i4"]
+[gd_scene format=3 uid="uid://ofs3ql6m51i4"]
 
-[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_w54pl"]
+[ext_resource type="Script" uid="uid://m017m1i82g44" path="res://scripts/level_manager.gd" id="1_w54pl"]
+[ext_resource type="Shader" uid="uid://cfpmqn5rvfviu" path="res://scripts/shader_scripts/col_quant_dith.gdshader" id="2_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://d0umqc7sh3eoo" path="res://scenes/debug_panel.tscn" id="2_qsy5b"]
-[ext_resource type="Script" path="res://scenes/ui/gui.gd" id="3_7rqsa"]
+[ext_resource type="Script" uid="uid://1jvv6e25xb7x" path="res://scripts/gui.gd" id="3_7rqsa"]
 [ext_resource type="PackedScene" uid="uid://bx0tnf4mos5bh" path="res://prototyping/prototype_scenes/prototype_level.tscn" id="3_xhbfp"]
-[ext_resource type="Script" path="res://scripts/action_menu_manager.gd" id="4_e6jmp"]
-[ext_resource type="StyleBox" uid="uid://n8x78il7dvkg" path="res://themes/style_boxes/command_active_stylebox.tres" id="4_qg0n6"]
+[ext_resource type="Script" uid="uid://bmyobk3mkbr1i" path="res://scripts/action_menu_manager.gd" id="4_e6jmp"]
+[ext_resource type="StyleBox" uid="uid://n8x78il7dvkg" path="res://assets/themes/style_boxes/command_active_stylebox.tres" id="4_qg0n6"]
 [ext_resource type="PackedScene" uid="uid://ce0rbhsjqoww1" path="res://scenes/ui/action_menu.tscn" id="5_1ysoe"]
-[ext_resource type="StyleBox" uid="uid://doj3c5yjfsetr" path="res://themes/style_boxes/battle_active_button.tres" id="6_l70qt"]
+[ext_resource type="StyleBox" uid="uid://doj3c5yjfsetr" path="res://assets/themes/style_boxes/battle_active_button.tres" id="6_l70qt"]
 [ext_resource type="PackedScene" uid="uid://buk6mte67edso" path="res://scenes/ui/title_menu.tscn" id="7_tevlc"]
-[ext_resource type="Shader" path="res://scenes/dither.gdshader" id="10_4by7y"]
-[ext_resource type="Texture2D" uid="uid://ux0koyxcr71a" path="res://images/jaret_portrait.png" id="10_8nf4x"]
-[ext_resource type="Script" path="res://scripts/ui/time_manager.gd" id="11_yhb4o"]
+[ext_resource type="Texture2D" uid="uid://ux0koyxcr71a" path="res://assets/images/jaret_portrait.png" id="10_8nf4x"]
+[ext_resource type="Script" uid="uid://bo545tmb6cxkt" path="res://scripts/ui/time_manager.gd" id="11_yhb4o"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_opdfy"]
-shader = ExtResource("10_4by7y")
-shader_parameter/fog_color = Color(0, 0, 0, 1)
-shader_parameter/resolution_downsampling = 3.0
-shader_parameter/bit_depth = 32.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_trceg"]
+shader = ExtResource("2_eb6dy")
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" unique_id=1575740282]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,79 +24,61 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LevelManager" type="Node" parent="."]
-script = ExtResource("1_w54pl")
-
-[node name="LevelViewportContainer" type="SubViewportContainer" parent="LevelManager"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-
-[node name="LevelViewport" type="SubViewport" parent="LevelManager/LevelViewportContainer"]
-handle_input_locally = false
-size = Vector2i(960, 540)
-render_target_update_mode = 4
-
-[node name="PrototypeLevel" parent="LevelManager/LevelViewportContainer/LevelViewport" instance=ExtResource("3_xhbfp")]
-
-[node name="GUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("PORTRAIT")]
-process_mode = 3
-script = ExtResource("3_7rqsa")
-PORTRAIT = NodePath("Portrait")
-
-[node name="ActionMenu" parent="GUI" instance=ExtResource("5_1ysoe")]
-
-[node name="ActionMenuManager" type="Node" parent="GUI/ActionMenu" node_paths=PackedStringArray("ACTION_MENU")]
-script = ExtResource("4_e6jmp")
-ACTION_MENU = NodePath("..")
-ACTIVE_NORMAL_BUTTON_STYLEBOX = ExtResource("4_qg0n6")
-ACTIVE_BATTLE_BUTTON_STYLEBOX = ExtResource("6_l70qt")
-
-[node name="DebugPanel" parent="GUI" instance=ExtResource("2_qsy5b")]
-visible = false
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 158.0
-offset_bottom = 77.0
-
-[node name="TitleMenu" parent="GUI" instance=ExtResource("7_tevlc")]
-visible = false
-
-[node name="Portrait" type="NinePatchRect" parent="GUI"]
-texture_filter = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -154.0
-offset_top = -186.0
-offset_right = -90.0
-offset_bottom = -106.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(2, 2)
-texture = ExtResource("10_8nf4x")
-region_rect = Rect2(0, 0, 64, 80)
-
-[node name="TimeManager" type="Node" parent="GUI"]
-script = ExtResource("11_yhb4o")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_opdfy")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1803744805]
+top_level = true
+material = SubResource("ShaderMaterial_trceg")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="LevelManager" type="Node3D" parent="." unique_id=13743993]
+script = ExtResource("1_w54pl")
+
+[node name="PrototypeLevel" parent="LevelManager" unique_id=1998099202 instance=ExtResource("3_xhbfp")]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=478671622 node_paths=PackedStringArray("PORTRAIT")]
+process_mode = 3
+script = ExtResource("3_7rqsa")
+PORTRAIT = NodePath("Portrait")
+
+[node name="ActionMenu" parent="GUI" unique_id=241844666 instance=ExtResource("5_1ysoe")]
+visible = false
+
+[node name="ActionMenuManager" type="Node" parent="GUI/ActionMenu" unique_id=1507226760 node_paths=PackedStringArray("ACTION_MENU")]
+script = ExtResource("4_e6jmp")
+ACTION_MENU = NodePath("..")
+ACTIVE_NORMAL_BUTTON_STYLEBOX = ExtResource("4_qg0n6")
+ACTIVE_BATTLE_BUTTON_STYLEBOX = ExtResource("6_l70qt")
+
+[node name="DebugPanel" parent="GUI" unique_id=1328058587 instance=ExtResource("2_qsy5b")]
+visible = false
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 158.0
+offset_bottom = 77.0
+
+[node name="TitleMenu" parent="GUI" unique_id=656540756 instance=ExtResource("7_tevlc")]
+visible = false
+
+[node name="Portrait" type="NinePatchRect" parent="GUI" unique_id=590685535]
+texture_filter = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -103.0
+offset_right = -23.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("10_8nf4x")
+region_rect = Rect2(0, 0, 64, 80)
+
+[node name="TimeManager" type="Node" parent="GUI" unique_id=1087721324]
+script = ExtResource("11_yhb4o")

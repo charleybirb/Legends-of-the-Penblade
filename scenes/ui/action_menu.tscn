@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce0rbhsjqoww1"]
+[gd_scene format=3 uid="uid://ce0rbhsjqoww1"]
 
-[ext_resource type="Theme" uid="uid://4k66t1mcc4m7" path="res://themes/action_battle_theme.tres" id="1_csnrx"]
-[ext_resource type="Theme" uid="uid://dbii4nweh15un" path="res://themes/command_menu_theme.tres" id="1_soahu"]
-[ext_resource type="StyleBox" uid="uid://n8x78il7dvkg" path="res://themes/style_boxes/command_active_stylebox.tres" id="2_et01j"]
-[ext_resource type="Script" path="res://scripts/ui/action_menu.gd" id="2_o3gtc"]
-[ext_resource type="StyleBox" uid="uid://jcekieuew2t1" path="res://themes/style_boxes/action_menu_title_battle.tres" id="3_ejnqo"]
-[ext_resource type="StyleBox" uid="uid://w13s6nln1cau" path="res://themes/style_boxes/action_menu_title_normal.tres" id="3_uksc7"]
+[ext_resource type="Theme" uid="uid://4k66t1mcc4m7" path="res://assets/themes/action_battle_theme.tres" id="1_csnrx"]
+[ext_resource type="Theme" uid="uid://dbii4nweh15un" path="res://assets/themes/command_menu_theme.tres" id="1_soahu"]
+[ext_resource type="StyleBox" uid="uid://n8x78il7dvkg" path="res://assets/themes/style_boxes/command_active_stylebox.tres" id="2_et01j"]
+[ext_resource type="Script" uid="uid://pgj2dh37pfay" path="res://scripts/ui/action_menu.gd" id="2_o3gtc"]
+[ext_resource type="StyleBox" uid="uid://jcekieuew2t1" path="res://assets/themes/style_boxes/action_menu_title_battle.tres" id="3_ejnqo"]
+[ext_resource type="StyleBox" uid="uid://w13s6nln1cau" path="res://assets/themes/style_boxes/action_menu_title_normal.tres" id="3_uksc7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1085"]
 

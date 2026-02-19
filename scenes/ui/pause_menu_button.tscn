@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsma3gawn3d00"]
 
-[ext_resource type="Script" path="res://scripts/ui/buttons/pause_menu_button.gd" id="1_kqpwj"]
+[ext_resource type="Script" uid="uid://ciatfna6yxlla" path="res://scripts/ui/buttons/pause_menu_button.gd" id="1_kqpwj"]
 
 [node name="PauseMenuButton" type="PanelContainer" node_paths=PackedStringArray("BUTTON_LABEL")]
 mouse_filter = 1

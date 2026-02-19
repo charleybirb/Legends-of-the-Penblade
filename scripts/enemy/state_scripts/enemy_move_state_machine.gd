@@ -36,10 +36,11 @@ func update(input: InputPackage, delta: float) -> void:
 	current_move_state.update(input, delta)
 
 
-func switch_to(state: String) -> void:
-	if current_move_state != states[state]:
+func switch_to(new_state_name: String) -> void:
+	if current_move_state != states[new_state_name]:
 		current_move_state.exit()
-	current_move_state = states[state]
+	var previous_state : MoveState = current_move_state
+	current_move_state = states[new_state_name]
 	Global.debug.update_label("MoveState", current_move_state.name)
-	current_move_state.enter()
+	current_move_state.enter(previous_state)
 	current_move_state.mark_enter_state()

@@ -1,6 +1,7 @@
 class_name CameraController
 extends Node3D
 
+@export_group("Connected Nodes")
 @export var YAW_NODE : Node3D
 @export var PITCH_NODE : Node3D
 @export var SPRING_ARM_NODE : SpringArm3D
@@ -10,25 +11,20 @@ extends Node3D
 @export var ROOT_MESH : Node3D
 
 const FOLLOW_SPEED := 5.0
-
 const DEFAULT_HEIGHT := 0.0
 const MIN_HEIGHT := -0.7
 const MAX_HEIGHT := 0.0
 const HEIGHT_SENSITIVITY := 0.05
 const HEIGHT_ACCELERATION := 0.0
-
 const DEFAULT_SPRING_LENGTH := 3.795
 const MAX_SPRING_LENGTH := 4.0
 const MIN_SPRING_LENGTH := 2.8
 const SPRING_SENSITIVITY := 0.08
 const SPRING_ACCELERATION := 0.0
-
 const DEFAULT_YAW := 0.0
-
 const DEFAULT_PITCH := -8.4
 const MAX_PITCH := 20
 const MIN_PITCH := -50
-
 const PITCH_ACCELERATION := 15
 const YAW_ACCELERATION := 15
 
@@ -36,9 +32,11 @@ var spring_length : float = DEFAULT_SPRING_LENGTH
 var yaw : float = DEFAULT_YAW
 var pitch : float = DEFAULT_PITCH
 var height : float = DEFAULT_HEIGHT
-
 var pitch_direction : int = 1
 var lock_on_target
+var is_using_mouse : bool = true
+var sensitivity_multiplier : float = 11.0
+
 
 func _ready() -> void:
 	top_level = true
@@ -46,7 +44,8 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if not (Global.is_mouse_captured and event is InputEventMouseMotion): return
+	if not (Global.is_mouse_captured and event is InputEventMouseMotion): 
+		return
 	yaw += -event.relative.x * Global.h_sensitivity
 	var last_pitch = pitch
 	pitch = clamp((pitch + -event.relative.y * Global.v_sensitivity),
@@ -67,7 +66,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	var input := INPUT_MANAGER.gather_input()
-	if Global.is_mouse_captured:
+	if input.camera_direction == Vector2.ZERO:
 		rotate_camera_with_mouse(input, delta)
 	else:
 		rotate_camera_with_buttons(input, delta)
@@ -103,19 +102,10 @@ func rotate_camera_with_mouse(input: InputPackage, delta: float) -> void:
 		
 
 func rotate_camera_with_buttons(input: InputPackage, delta: float) -> void:
-	var sensitivity_multiplier := 4
-	if "camera_left" in input.actions:
-		yaw += -1 * Global.h_sensitivity * sensitivity_multiplier
-		rotate_yaw(delta)
-	if "camera_right" in input.actions:
-		yaw += 1 * Global.h_sensitivity * sensitivity_multiplier
-		rotate_yaw(delta)
-	if "camera_up" in input.actions:
-		pitch += 1 * Global.v_sensitivity * sensitivity_multiplier
-		rotate_pitch(delta)
-	if "camera_down" in input.actions:
-		pitch += -1 * Global.v_sensitivity * sensitivity_multiplier
-		rotate_pitch(delta)
+	yaw += -input.camera_direction.x * Global.h_sensitivity * sensitivity_multiplier
+	rotate_yaw(delta)
+	pitch += -input.camera_direction.y * Global.v_sensitivity * sensitivity_multiplier
+	rotate_pitch(delta)
 
 
 func rotate_yaw(delta: float) -> void:
@@ -132,20 +122,11 @@ func rotate_pitch(delta: float) -> void:
 
 
 func follow_target(delta: float):
-	var target_position : Vector3 = TARGET.global_position if !lock_on_target else (
-		(lock_on_target.global_position + TARGET.global_position) / 2)
-	global_position.x = lerp(
-		global_position.x, 
-		target_position.x, 
-		FOLLOW_SPEED * delta)
-	global_position.z = lerp(
-		global_position.z, 
-		target_position.z, 
-		FOLLOW_SPEED * delta)
-	global_position.y = lerp(
-		global_position.y, 
-		target_position.y, 
-		FOLLOW_SPEED * 0.8 * delta)
+	var target_position : Vector3 = TARGET.global_position if !lock_on_target else \
+		(lock_on_target.global_position + TARGET.global_position) / 2
+	global_position.x = lerp(global_position.x, target_position.x, FOLLOW_SPEED * delta)
+	global_position.z = lerp(global_position.z, target_position.z, FOLLOW_SPEED * delta)
+	global_position.y = lerp(global_position.y, target_position.y, FOLLOW_SPEED * 0.8 * delta)
 					   
 
 func lock_on(new_target) -> void:

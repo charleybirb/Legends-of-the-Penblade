@@ -1,29 +1,29 @@
-[gd_scene load_steps=59 format=4 uid="uid://38cpuckweh1l"]
+[gd_scene format=4 uid="uid://38cpuckweh1l"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_gbbpt"]
-[ext_resource type="Texture2D" uid="uid://bhjv412csp1lb" path="res://models/jaret/jaret_full_texture-atlas1.png" id="2_40vxe"]
-[ext_resource type="Script" path="res://scripts/player/shadow_ray.gd" id="2_kg6dj"]
-[ext_resource type="Script" path="res://scripts/player/camera_controller.gd" id="2_ngoov"]
-[ext_resource type="Texture2D" uid="uid://ksk1bg2wgkgg" path="res://models/jaret/jaret_full_jaret-neutral.jpg" id="3_hqd5d"]
+[ext_resource type="Script" uid="uid://wnfvsyrmm33w" path="res://scripts/player/player.gd" id="1_gbbpt"]
+[ext_resource type="Texture2D" uid="uid://bhjv412csp1lb" path="res://assets/models/jaret/jaret_full_texture-atlas1.png" id="2_40vxe"]
+[ext_resource type="Script" uid="uid://bemt3t80loq0a" path="res://scripts/player/shadow_ray.gd" id="2_kg6dj"]
+[ext_resource type="Script" uid="uid://cvd4yvdkfpkxm" path="res://scripts/player/camera_controller.gd" id="2_ngoov"]
+[ext_resource type="Texture2D" uid="uid://ksk1bg2wgkgg" path="res://assets/models/jaret/jaret_full_jaret-neutral.jpg" id="3_hqd5d"]
 [ext_resource type="PackedScene" uid="uid://bng2ogfgkysgy" path="res://scenes/penblade.tscn" id="4_v7l4v"]
-[ext_resource type="Script" path="res://scripts/player/input_manager.gd" id="4_xcp3r"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/player_move_state_machine.gd" id="5_5bmdo"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/player_state_machine.gd" id="6_gtkoc"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/idle_move_state.gd" id="6_hblly"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/run_move_state.gd" id="7_xoaxg"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/jump_move_state.gd" id="8_0by57"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/land_move_state.gd" id="9_nckcm"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/interact_move_state.gd" id="10_hn40i"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/primary_action_move_state.gd" id="11_dwr3i"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/fall_move_state.gd" id="13_johep"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/move_state/ledge_grab.gd" id="14_5a5o5"]
-[ext_resource type="Script" path="res://scripts/velocity_component.gd" id="15_ab7u7"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/attack_states/attack_1.gd" id="15_cjtwm"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/attack_states/player_attack_state_machine.gd" id="15_egpl3"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/attack_states/attack_2.gd" id="16_rfvdv"]
-[ext_resource type="Script" path="res://scripts/player/state_scripts/attack_states/attack_3.gd" id="17_kbsc1"]
-[ext_resource type="Script" path="res://scripts/player/battle_manager.gd" id="21_gmjgq"]
-[ext_resource type="Texture2D" uid="uid://cytmbqvj4yuwt" path="res://images/shadow.png" id="23_e2lt2"]
+[ext_resource type="Script" uid="uid://m6763u02xey2" path="res://scripts/player/input_manager.gd" id="4_xcp3r"]
+[ext_resource type="Script" uid="uid://b0m1etjuit8yl" path="res://scripts/player/state_scripts/move_state/player_move_state_machine.gd" id="5_5bmdo"]
+[ext_resource type="Script" uid="uid://05mnkm7foquo" path="res://scripts/player/state_scripts/player_state_machine.gd" id="6_gtkoc"]
+[ext_resource type="Script" uid="uid://bampryk0d5yp8" path="res://scripts/player/state_scripts/move_state/idle_move_state.gd" id="6_hblly"]
+[ext_resource type="Script" uid="uid://khp5kaunurtf" path="res://scripts/player/state_scripts/move_state/run_move_state.gd" id="7_xoaxg"]
+[ext_resource type="Script" uid="uid://bxo3du2s2hmyd" path="res://scripts/player/state_scripts/move_state/jump_move_state.gd" id="8_0by57"]
+[ext_resource type="Script" uid="uid://cx13ei31gdbhi" path="res://scripts/player/state_scripts/move_state/land_move_state.gd" id="9_nckcm"]
+[ext_resource type="Script" uid="uid://ckm8f50vxcmbq" path="res://scripts/player/state_scripts/move_state/interact_move_state.gd" id="10_hn40i"]
+[ext_resource type="Script" uid="uid://docuff5huau6i" path="res://scripts/player/state_scripts/move_state/primary_action_move_state.gd" id="11_dwr3i"]
+[ext_resource type="Script" uid="uid://bm4y6drhhteqj" path="res://scripts/player/state_scripts/move_state/fall_move_state.gd" id="13_johep"]
+[ext_resource type="Script" uid="uid://cdjsrqem88q0a" path="res://scripts/player/state_scripts/move_state/ledge_grab.gd" id="14_5a5o5"]
+[ext_resource type="Script" uid="uid://dcpcq3kd4jyxs" path="res://scripts/component_scripts/velocity_component.gd" id="15_ab7u7"]
+[ext_resource type="Script" uid="uid://bikbwsru5ucx0" path="res://scripts/player/state_scripts/attack_states/attack_1.gd" id="15_cjtwm"]
+[ext_resource type="Script" uid="uid://b64g3y3fy3reu" path="res://scripts/player/state_scripts/attack_states/player_attack_state_machine.gd" id="15_egpl3"]
+[ext_resource type="Script" uid="uid://cy8tuvn0d8ymk" path="res://scripts/player/state_scripts/attack_states/attack_2.gd" id="16_rfvdv"]
+[ext_resource type="Script" uid="uid://cy0apx2pruyr5" path="res://scripts/player/state_scripts/attack_states/attack_3.gd" id="17_kbsc1"]
+[ext_resource type="Script" uid="uid://dmgdyj2hobfh3" path="res://scripts/player/battle_manager.gd" id="21_gmjgq"]
+[ext_resource type="Texture2D" uid="uid://cytmbqvj4yuwt" path="res://assets/images/shadow.png" id="23_e2lt2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sk26b"]
 radius = 0.284677
@@ -2438,22 +2438,22 @@ tracks/19/keys = PackedFloat32Array(0, 1, -0.200314, 0.180983, -0.625331, 0.7321
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ot8ip"]
 _data = {
-"RESET": SubResource("Animation_ocjcw"),
-"attack1": SubResource("Animation_8kf16"),
-"attack2": SubResource("Animation_xtsdk"),
-"attack3": SubResource("Animation_a6xtb"),
-"fall": SubResource("Animation_3g1lt"),
-"idle": SubResource("Animation_63gxn"),
-"interact": SubResource("Animation_5mvfi"),
-"jump": SubResource("Animation_gjht7"),
-"land": SubResource("Animation_g2s25"),
-"run": SubResource("Animation_qvq0j"),
-"run_bump": SubResource("Animation_jutty"),
-"t-pose": SubResource("Animation_cj4e5"),
-"turn_left": SubResource("Animation_rbhhl"),
-"turn_right": SubResource("Animation_75kh4"),
-"walk": SubResource("Animation_gmio3"),
-"walk_back": SubResource("Animation_7i12q")
+&"RESET": SubResource("Animation_ocjcw"),
+&"attack1": SubResource("Animation_8kf16"),
+&"attack2": SubResource("Animation_xtsdk"),
+&"attack3": SubResource("Animation_a6xtb"),
+&"fall": SubResource("Animation_3g1lt"),
+&"idle": SubResource("Animation_63gxn"),
+&"interact": SubResource("Animation_5mvfi"),
+&"jump": SubResource("Animation_gjht7"),
+&"land": SubResource("Animation_g2s25"),
+&"run": SubResource("Animation_qvq0j"),
+&"run_bump": SubResource("Animation_jutty"),
+&"t-pose": SubResource("Animation_cj4e5"),
+&"turn_left": SubResource("Animation_rbhhl"),
+&"turn_right": SubResource("Animation_75kh4"),
+&"walk": SubResource("Animation_gmio3"),
+&"walk_back": SubResource("Animation_7i12q")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_22hgu"]
@@ -2469,7 +2469,7 @@ radius = 0.1
 height = 6.63787
 radius = 23.017
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("INPUT_MANAGER", "CAMERA_CONTROLLER", "STATE_MACHINES")]
+[node name="Player" type="CharacterBody3D" unique_id=1355940440 node_paths=PackedStringArray("INPUT_MANAGER", "CAMERA_CONTROLLER", "STATE_MACHINES")]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_gbbpt")
@@ -2477,29 +2477,29 @@ INPUT_MANAGER = NodePath("InputManager")
 CAMERA_CONTROLLER = NodePath("CameraController")
 STATE_MACHINES = NodePath("PlayerStateMachine")
 
-[node name="Collider" type="CollisionShape3D" parent="."]
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1173437126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891237, 0.00148009)
 shape = SubResource("CapsuleShape3D_sk26b")
 
-[node name="Model" type="Node3D" parent="."]
+[node name="Model" type="Node3D" parent="." unique_id=170334061]
 
-[node name="ShadowRay" type="RayCast3D" parent="Model" node_paths=PackedStringArray("SHADOW")]
+[node name="ShadowRay" type="RayCast3D" parent="Model" unique_id=844933731 node_paths=PackedStringArray("SHADOW")]
 target_position = Vector3(0, -2, 0)
 collision_mask = 3
 script = ExtResource("2_kg6dj")
 SHADOW = NodePath("../Shadow")
 
-[node name="Shadow" type="Sprite3D" parent="Model"]
+[node name="Shadow" type="Sprite3D" parent="Model" unique_id=1909349773]
 transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 1, 0, -0.8, -4.37114e-08, 0, 0.01, 0)
 modulate = Color(1, 1, 1, 0.635294)
 texture = ExtResource("23_e2lt2")
 
-[node name="Armature" type="Node3D" parent="Model"]
+[node name="Armature" type="Node3D" parent="Model" unique_id=1350026929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09566e-08, 0, -0.125329)
 
-[node name="head" type="Node3D" parent="Model/Armature"]
+[node name="head" type="Node3D" parent="Model/Armature" unique_id=1579683146]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Model/Armature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Model/Armature" unique_id=2085352214]
 animate_physical_bones = false
 bones/0/name = "torso_2"
 bones/0/parent = -1
@@ -2621,107 +2621,105 @@ bones/16/position = Vector3(-9.77889e-09, 0.436702, -3.15413e-09)
 bones/16/rotation = Quaternion(-0.200314, 0.180983, -0.625331, 0.732176)
 bones/16/scale = Vector3(1, 1, 1)
 
-[node name="foot_l" type="MeshInstance3D" parent="Model/Armature/Skeleton3D"]
+[node name="foot_l" type="MeshInstance3D" parent="Model/Armature/Skeleton3D" unique_id=1598473702]
 mesh = SubResource("ArrayMesh_bf8bf")
 skin = SubResource("Skin_6y5p4")
 
-[node name="foot_r" type="MeshInstance3D" parent="Model/Armature/Skeleton3D"]
+[node name="foot_r" type="MeshInstance3D" parent="Model/Armature/Skeleton3D" unique_id=123252417]
 mesh = SubResource("ArrayMesh_qi452")
 skin = SubResource("Skin_6y5p4")
 
-[node name="RightFoot" type="BoneAttachment3D" parent="Model/Armature/Skeleton3D"]
-transform = Transform3D(0.0140758, -0.353946, 0.93516, 0.986978, -0.144951, -0.069718, 0.160229, 0.923965, 0.347297, -0.104349, 0.0275888, 0.0676144)
+[node name="RightFoot" type="BoneAttachment3D" parent="Model/Armature/Skeleton3D" unique_id=1325632095]
+transform = Transform3D(0.014075835, -0.35394567, 0.9351601, 0.9869784, -0.14495142, -0.06971795, 0.16022922, 0.9239651, 0.3472966, -0.10434942, 0.027588785, 0.067614414)
 bone_name = "foot.r"
 bone_idx = 16
 
-[node name="RightFootCollisionArea" type="Area3D" parent="Model/Armature/Skeleton3D/RightFoot"]
+[node name="RightFootCollisionArea" type="Area3D" parent="Model/Armature/Skeleton3D/RightFoot" unique_id=1970126022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0280017, 0.279213, 3.84171e-09)
 monitoring = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Armature/Skeleton3D/RightFoot/RightFootCollisionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Armature/Skeleton3D/RightFoot/RightFootCollisionArea" unique_id=1684067104]
 transform = Transform3D(1, -1.86265e-08, 7.39098e-06, -7.45058e-09, 1, 3.56138e-06, -4.76837e-07, -9.31323e-09, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_u1h4v")
 
-[node name="hand_l" type="MeshInstance3D" parent="Model/Armature/Skeleton3D"]
+[node name="hand_l" type="MeshInstance3D" parent="Model/Armature/Skeleton3D" unique_id=1611100310]
 mesh = SubResource("ArrayMesh_5yva7")
 skin = SubResource("Skin_6y5p4")
 
-[node name="LeftHand" type="BoneAttachment3D" parent="Model/Armature/Skeleton3D"]
-transform = Transform3D(-0.00584988, 0.997265, -0.0736704, -0.996861, 8.71572e-07, 0.0791693, 0.0789529, 0.0739023, 0.994135, 0.783007, 1.38232, 0.00543754)
+[node name="LeftHand" type="BoneAttachment3D" parent="Model/Armature/Skeleton3D" unique_id=2130080047]
+transform = Transform3D(-0.005849882, 0.9972654, -0.073670425, -0.99686116, 8.715724e-07, 0.07916935, 0.07895292, 0.07390233, 0.9941353, 0.78300714, 1.3823218, 0.005437537)
 bone_name = "chest.004"
 bone_idx = 6
 
-[node name="LeftHandCollisionArea" type="Area3D" parent="Model/Armature/Skeleton3D/LeftHand"]
+[node name="LeftHandCollisionArea" type="Area3D" parent="Model/Armature/Skeleton3D/LeftHand" unique_id=839527276]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.231633, -4.36557e-11)
 monitoring = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Armature/Skeleton3D/LeftHand/LeftHandCollisionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Armature/Skeleton3D/LeftHand/LeftHandCollisionArea" unique_id=340914696]
 transform = Transform3D(1, -1.86265e-08, 7.56979e-06, -7.45058e-09, 1, 3.82401e-06, -4.76837e-07, -9.31323e-09, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_u1h4v")
 
-[node name="hand_r" type="MeshInstance3D" parent="Model/Armature/Skeleton3D"]
+[node name="hand_r" type="MeshInstance3D" parent="Model/Armature/Skeleton3D" unique_id=1245490872]
 mesh = SubResource("ArrayMesh_atvqb")
 skin = SubResource("Skin_6y5p4")
 
-[node name="RightHand" type="BoneAttachment3D" parent="Model/Armature/Skeleton3D"]
-transform = Transform3D(2.56943e-07, -1, 4.47035e-08, 0.996824, 2.71481e-07, 0.0796351, -0.0796351, 2.23517e-08, 0.996824, -0.800929, 1.38551, 0.0122453)
+[node name="RightHand" type="BoneAttachment3D" parent="Model/Armature/Skeleton3D" unique_id=812471035]
+transform = Transform3D(2.5694317e-07, -0.99999994, 4.4703484e-08, 0.99682415, 2.7148053e-07, 0.0796351, -0.079635106, 2.2351742e-08, 0.9968242, -0.80092883, 1.3855051, 0.012245333)
 bone_name = "hand.r"
 bone_idx = 10
 
-[node name="Penblade" parent="Model/Armature/Skeleton3D/RightHand" instance=ExtResource("4_v7l4v")]
+[node name="Penblade" parent="Model/Armature/Skeleton3D/RightHand" unique_id=1996969991 instance=ExtResource("4_v7l4v")]
 transform = Transform3D(-0.0427344, 0.770075, -0.63652, -0.137262, -0.635585, -0.75973, -0.989613, 0.0549037, 0.132864, -0.167529, 0.15796, 0.0158088)
 visible = false
 
-[node name="RightHandCollisionArea" type="Area3D" parent="Model/Armature/Skeleton3D/RightHand"]
+[node name="RightHandCollisionArea" type="Area3D" parent="Model/Armature/Skeleton3D/RightHand" unique_id=21044995]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.31323e-10, 0.192879, -6.40285e-10)
 monitoring = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Armature/Skeleton3D/RightHand/RightHandCollisionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Armature/Skeleton3D/RightHand/RightHandCollisionArea" unique_id=1783804179]
 transform = Transform3D(1, 2.23517e-08, 7.55489e-06, -4.47035e-08, 1, 3.67872e-06, -4.47035e-07, 2.32831e-08, 1, 2.68852e-10, 0.0120283, 6.17784e-11)
 shape = SubResource("BoxShape3D_u1h4v")
 
-[node name="hat" type="MeshInstance3D" parent="Model/Armature/Skeleton3D"]
+[node name="hat" type="MeshInstance3D" parent="Model/Armature/Skeleton3D" unique_id=2039657598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00319806, 0)
 mesh = SubResource("ArrayMesh_pa24i")
 skin = SubResource("Skin_6y5p4")
 
-[node name="head" type="MeshInstance3D" parent="Model/Armature/Skeleton3D"]
+[node name="head" type="MeshInstance3D" parent="Model/Armature/Skeleton3D" unique_id=2002269745]
 mesh = SubResource("ArrayMesh_u57n3")
 skin = SubResource("Skin_6y5p4")
 
-[node name="neck" type="MeshInstance3D" parent="Model/Armature/Skeleton3D"]
+[node name="neck" type="MeshInstance3D" parent="Model/Armature/Skeleton3D" unique_id=562310627]
 mesh = SubResource("ArrayMesh_4s14y")
 skin = SubResource("Skin_6y5p4")
 
-[node name="torso" type="MeshInstance3D" parent="Model/Armature/Skeleton3D"]
+[node name="torso" type="MeshInstance3D" parent="Model/Armature/Skeleton3D" unique_id=162649065]
 mesh = SubResource("ArrayMesh_t8pwc")
 skin = SubResource("Skin_6y5p4")
 
-[node name="LedgeRay" type="RayCast3D" parent="Model"]
+[node name="LedgeRay" type="RayCast3D" parent="Model" unique_id=1769171956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86047, 0.491526)
 target_position = Vector3(0, -0.4, 0)
 collision_mask = 3
 hit_back_faces = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Model"]
-libraries = {
-"": SubResource("AnimationLibrary_ot8ip")
-}
-autoplay = "idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model" unique_id=1472780475]
+libraries/ = SubResource("AnimationLibrary_ot8ip")
+autoplay = &"idle"
 
-[node name="TargetSpringArm" type="SpringArm3D" parent="Model"]
+[node name="TargetSpringArm" type="SpringArm3D" parent="Model" unique_id=450350254]
 transform = Transform3D(-1, 0, 8.75443e-08, 0, 1, 0, -8.75443e-08, 0, -1, 0.02, 1.85421, -0.352538)
 shape = SubResource("SphereShape3D_22hgu")
 spring_length = -0.8
 
-[node name="CameraTarget" type="Marker3D" parent="Model/TargetSpringArm"]
+[node name="CameraTarget" type="Marker3D" parent="Model/TargetSpringArm" unique_id=1377660233]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model/TargetSpringArm/CameraTarget"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model/TargetSpringArm/CameraTarget" unique_id=1900193420]
 visible = false
 mesh = SubResource("BoxMesh_thcwl")
 skeleton = NodePath("")
 
-[node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("YAW_NODE", "PITCH_NODE", "SPRING_ARM_NODE", "CAMERA_NODE", "TARGET", "INPUT_MANAGER", "ROOT_MESH")]
+[node name="CameraController" type="Node3D" parent="." unique_id=814809830 node_paths=PackedStringArray("YAW_NODE", "PITCH_NODE", "SPRING_ARM_NODE", "CAMERA_NODE", "TARGET", "INPUT_MANAGER", "ROOT_MESH")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.706, 0)
 script = ExtResource("2_ngoov")
 YAW_NODE = NodePath("Yaw")
@@ -2732,132 +2730,132 @@ TARGET = NodePath("../Model/TargetSpringArm/CameraTarget")
 INPUT_MANAGER = NodePath("../InputManager")
 ROOT_MESH = NodePath("../Model")
 
-[node name="Yaw" type="Node3D" parent="CameraController"]
+[node name="Yaw" type="Node3D" parent="CameraController" unique_id=1320381697]
 
-[node name="Pitch" type="Node3D" parent="CameraController/Yaw"]
+[node name="Pitch" type="Node3D" parent="CameraController/Yaw" unique_id=1817006944]
 transform = Transform3D(1, 0, 0, 0, 0.989399, 0.14522, 0, -0.14522, 0.989399, 0, 0, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="CameraController/Yaw/Pitch"]
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraController/Yaw/Pitch" unique_id=2037855680]
 shape = SubResource("SphereShape3D_nldpy")
 spring_length = 3.795
 
-[node name="Camera3D" type="Camera3D" parent="CameraController/Yaw/Pitch/SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="CameraController/Yaw/Pitch/SpringArm3D" unique_id=1230244422]
 transform = Transform3D(1, -1.16415e-10, -8.67382e-19, 1.16415e-10, 1, 7.45058e-09, 0, -7.45058e-09, 1, 0, 0, 0)
 current = true
 fov = 70.0
 near = 0.01
 far = 400.0
 
-[node name="DetectArea" type="Area3D" parent="."]
+[node name="DetectArea" type="Area3D" parent="." unique_id=104156802]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea" unique_id=552542685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22365, 0)
 shape = SubResource("CylinderShape3D_kcrfs")
 
-[node name="FallRay" type="RayCast3D" parent="."]
+[node name="FallRay" type="RayCast3D" parent="." unique_id=912195383]
 target_position = Vector3(0, -0.4, 0)
 collision_mask = 3
 
-[node name="InputManager" type="Node" parent="."]
+[node name="InputManager" type="Node" parent="." unique_id=208174896]
 script = ExtResource("4_xcp3r")
 
-[node name="VelocityComponent" type="Node" parent="." node_paths=PackedStringArray("TARGET", "ROOT_MESH")]
+[node name="VelocityComponent" type="Node" parent="." unique_id=86569331 node_paths=PackedStringArray("TARGET", "ROOT_MESH")]
 script = ExtResource("15_ab7u7")
 TARGET = NodePath("..")
 ROOT_MESH = NodePath("../Model")
 
-[node name="PlayerStateMachine" type="Node" parent="." node_paths=PackedStringArray("MOVE_STATE_MACHINE", "ATTACK_STATE_MACHINE", "ANIMATION_PLAYER")]
+[node name="PlayerStateMachine" type="Node" parent="." unique_id=145926288 node_paths=PackedStringArray("MOVE_STATE_MACHINE", "ATTACK_STATE_MACHINE", "ANIMATION_PLAYER")]
 script = ExtResource("6_gtkoc")
 MOVE_STATE_MACHINE = NodePath("MoveStateMachine")
 ATTACK_STATE_MACHINE = NodePath("MoveStateMachine/PrimaryAction/AttackStateMachine")
 ANIMATION_PLAYER = NodePath("../Model/AnimationPlayer")
 
-[node name="MoveStateMachine" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("CAMERA_CONTROLLER", "VELOCITY_COMPONENT", "ANIMATION_PLAYER")]
+[node name="MoveStateMachine" type="Node" parent="PlayerStateMachine" unique_id=1406462447 node_paths=PackedStringArray("CAMERA_CONTROLLER", "VELOCITY_COMPONENT", "ANIMATION_PLAYER")]
 script = ExtResource("5_5bmdo")
 CAMERA_CONTROLLER = NodePath("../../CameraController")
 VELOCITY_COMPONENT = NodePath("../../VelocityComponent")
 ANIMATION_PLAYER = NodePath("../../Model/AnimationPlayer")
 
-[node name="Idle" type="Node" parent="PlayerStateMachine/MoveStateMachine" node_paths=PackedStringArray("CAMERA", "FALL_RAY")]
+[node name="Idle" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=982261899 node_paths=PackedStringArray("CAMERA", "FALL_RAY")]
 script = ExtResource("6_hblly")
 CAMERA = NodePath("../../../CameraController/Yaw/Pitch/SpringArm3D/Camera3D")
 FALL_RAY = NodePath("../../../FallRay")
 
-[node name="Run" type="Node" parent="PlayerStateMachine/MoveStateMachine" node_paths=PackedStringArray("CAMERA", "FALL_RAY")]
+[node name="Run" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=1974816239 node_paths=PackedStringArray("CAMERA", "FALL_RAY")]
 script = ExtResource("7_xoaxg")
 CAMERA = NodePath("../../../CameraController/Yaw/Pitch/SpringArm3D/Camera3D")
 FALL_RAY = NodePath("../../../FallRay")
 
-[node name="Jump" type="Node" parent="PlayerStateMachine/MoveStateMachine" node_paths=PackedStringArray("CAMERA")]
+[node name="Jump" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=506537794 node_paths=PackedStringArray("CAMERA")]
 script = ExtResource("8_0by57")
 CAMERA = NodePath("../../../CameraController/Yaw/Pitch/SpringArm3D/Camera3D")
 
-[node name="Fall" type="Node" parent="PlayerStateMachine/MoveStateMachine" node_paths=PackedStringArray("LEDGE_RAY", "CAMERA", "STATE_MACHINE")]
+[node name="Fall" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=1443408081 node_paths=PackedStringArray("LEDGE_RAY", "CAMERA", "STATE_MACHINE")]
 script = ExtResource("13_johep")
 LEDGE_RAY = NodePath("../../../Model/LedgeRay")
 CAMERA = NodePath("../../../CameraController/Yaw/Pitch/SpringArm3D/Camera3D")
 STATE_MACHINE = NodePath("..")
 
-[node name="LedgeGrab" type="Node" parent="PlayerStateMachine/MoveStateMachine"]
+[node name="LedgeGrab" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=268442233]
 script = ExtResource("14_5a5o5")
 
-[node name="Land" type="Node" parent="PlayerStateMachine/MoveStateMachine" node_paths=PackedStringArray("STATE_MACHINE")]
+[node name="Land" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=1786423947 node_paths=PackedStringArray("STATE_MACHINE")]
 script = ExtResource("9_nckcm")
 STATE_MACHINE = NodePath("..")
 
-[node name="PrimaryAction" type="Node" parent="PlayerStateMachine/MoveStateMachine" node_paths=PackedStringArray("ATTACK_STATE_MACHINE")]
+[node name="PrimaryAction" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=786398718 node_paths=PackedStringArray("ATTACK_STATE_MACHINE")]
 script = ExtResource("11_dwr3i")
 ATTACK_STATE_MACHINE = NodePath("AttackStateMachine")
 
-[node name="AttackStateMachine" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction" node_paths=PackedStringArray("TARGET", "ANIMATION_PLAYER")]
+[node name="AttackStateMachine" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction" unique_id=531901917 node_paths=PackedStringArray("TARGET", "ANIMATION_PLAYER")]
 script = ExtResource("15_egpl3")
 TARGET = NodePath("../../../..")
 ANIMATION_PLAYER = NodePath("../../../../Model/AnimationPlayer")
 
-[node name="GroundAttack" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine"]
+[node name="GroundAttack" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine" unique_id=1762225929]
 
-[node name="Attack1" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine/GroundAttack" node_paths=PackedStringArray("COLLISION_AREA")]
+[node name="Attack1" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine/GroundAttack" unique_id=1861644554 node_paths=PackedStringArray("COLLISION_AREA")]
 script = ExtResource("15_cjtwm")
 COLLISION_AREA = NodePath("../../../../../../Model/Armature/Skeleton3D/RightHand/RightHandCollisionArea")
 KNOCKBACK_STRENGTH = 0.0
 
-[node name="Attack2" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine/GroundAttack" node_paths=PackedStringArray("COLLISION_AREA")]
+[node name="Attack2" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine/GroundAttack" unique_id=1660099850 node_paths=PackedStringArray("COLLISION_AREA")]
 script = ExtResource("16_rfvdv")
 COLLISION_AREA = NodePath("../../../../../../Model/Armature/Skeleton3D/LeftHand/LeftHandCollisionArea")
 STRENGTH_MULTIPLIER = 1.3
 KNOCKBACK_STRENGTH = 1.0
 
-[node name="Attack3" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine/GroundAttack" node_paths=PackedStringArray("COLLISION_AREA")]
+[node name="Attack3" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine/GroundAttack" unique_id=1323696222 node_paths=PackedStringArray("COLLISION_AREA")]
 script = ExtResource("17_kbsc1")
 COLLISION_AREA = NodePath("../../../../../../Model/Armature/Skeleton3D/RightFoot/RightFootCollisionArea")
 STRENGTH_MULTIPLIER = 2.0
 KNOCKBACK_STRENGTH = 1.5
 
-[node name="AerialAttack" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine"]
+[node name="AerialAttack" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction/AttackStateMachine" unique_id=2018575273]
 
-[node name="ItemStateMachine" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction"]
+[node name="ItemStateMachine" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction" unique_id=1381861652]
 
-[node name="StyleStateMachine" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction"]
+[node name="StyleStateMachine" type="Node" parent="PlayerStateMachine/MoveStateMachine/PrimaryAction" unique_id=1244623930]
 
-[node name="SecondaryAction" type="Node" parent="PlayerStateMachine/MoveStateMachine"]
+[node name="SecondaryAction" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=1390998366]
 script = ExtResource("10_hn40i")
 
-[node name="Roll" type="Node" parent="PlayerStateMachine/MoveStateMachine"]
+[node name="Roll" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=1841429103]
 
-[node name="Knockback" type="Node" parent="PlayerStateMachine/MoveStateMachine"]
+[node name="Knockback" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=1738025546]
 
-[node name="Stun" type="Node" parent="PlayerStateMachine/MoveStateMachine"]
+[node name="Stun" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=1637757624]
 
-[node name="Block" type="Node" parent="PlayerStateMachine/MoveStateMachine"]
+[node name="Block" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=1399302513]
 
-[node name="Interact" type="Node" parent="PlayerStateMachine/MoveStateMachine"]
+[node name="Interact" type="Node" parent="PlayerStateMachine/MoveStateMachine" unique_id=258372579]
 script = ExtResource("10_hn40i")
 
-[node name="InteractStateMachine" type="Node" parent="PlayerStateMachine/MoveStateMachine/Interact"]
+[node name="InteractStateMachine" type="Node" parent="PlayerStateMachine/MoveStateMachine/Interact" unique_id=310075294]
 
-[node name="BattleManager" type="Node" parent="." node_paths=PackedStringArray("DETECT_AREA", "CAMERA_CONTROLLER")]
+[node name="BattleManager" type="Node" parent="." unique_id=408035264 node_paths=PackedStringArray("DETECT_AREA", "CAMERA_CONTROLLER")]
 script = ExtResource("21_gmjgq")
 DETECT_AREA = NodePath("../DetectArea")
 CAMERA_CONTROLLER = NodePath("../CameraController")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0umqc7sh3eoo"]
 
-[ext_resource type="Script" path="res://scripts/debug_panel.gd" id="1_pgsah"]
+[ext_resource type="Script" uid="uid://cdgu2k2akinys" path="res://scripts/debug_panel.gd" id="1_pgsah"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tju76"]
 

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://blmotquuomjvp"]
+
+[ext_resource type="Shader" uid="uid://dn38ykrxt4mhn" path="res://scripts/shader_scripts/psx_shader.gdshader" id="1_8k8un"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8y0u"]
+render_priority = 0
+shader = ExtResource("1_8k8un")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8k8un"]
+material = SubResource("ShaderMaterial_a8y0u")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="ScreenQuad" type="MeshInstance3D"]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_8k8un")

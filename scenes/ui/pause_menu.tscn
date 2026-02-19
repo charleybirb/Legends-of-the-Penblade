@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://ocuc7mbgccl5"]
+[gd_scene format=3 uid="uid://ocuc7mbgccl5"]
 
-[ext_resource type="Theme" uid="uid://dgngyebyjcxyl" path="res://scenes/menu_theme.tres" id="1_pbt0v"]
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_ohxnf"]
-[ext_resource type="StyleBox" uid="uid://cjv2cpd6huupu" path="res://themes/style_boxes/pause_menu_seperator_stylebox.tres" id="3_tlkq7"]
+[ext_resource type="Theme" uid="uid://dgngyebyjcxyl" path="res://assets/themes/menu_theme.tres" id="1_pbt0v"]
+[ext_resource type="Script" uid="uid://b6kl5ro387u1h" path="res://scripts/pause_menu.gd" id="2_ohxnf"]
+[ext_resource type="StyleBox" uid="uid://cjv2cpd6huupu" path="res://assets/themes/style_boxes/pause_menu_seperator_stylebox.tres" id="3_tlkq7"]
 [ext_resource type="PackedScene" uid="uid://de0j1mtiy1lu7" path="res://scenes/ui/main_pause_menu.tscn" id="4_uyt7p"]
-[ext_resource type="Script" path="res://scripts/ui/mbwozi_label.gd" id="8_2o81t"]
-[ext_resource type="Script" path="res://scripts/ui/time_label.gd" id="9_l8ho1"]
+[ext_resource type="Script" uid="uid://dqgmsb3vc613j" path="res://scripts/ui/mbwozi_label.gd" id="8_2o81t"]
+[ext_resource type="Script" uid="uid://dmldqji0mg66u" path="res://scripts/ui/time_label.gd" id="9_l8ho1"]
 
 [sub_resource type="Gradient" id="Gradient_nrmvj"]
 colors = PackedColorArray(0, 0, 0, 1, 0.0782667, 0.034, 0.2, 1)
@@ -58,7 +58,7 @@ color = Color(0.2646, 0.45339, 0.63, 0.290196)
 thickness = 3
 vertical = true
 
-[node name="PauseMenu" type="PanelContainer" node_paths=PackedStringArray("MENU_CONTAINER", "MENU_TITLE_LABEL", "MENU_TITLE_CONTAINER")]
+[node name="PauseMenu" type="PanelContainer" unique_id=1050007524 node_paths=PackedStringArray("MENU_CONTAINER", "MENU_TITLE_LABEL", "MENU_TITLE_CONTAINER")]
 process_mode = 3
 z_index = 1
 anchors_preset = 15
@@ -73,140 +73,139 @@ MENU_TITLE_LABEL = NodePath("MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBo
 MENU_TITLE_CONTAINER = NodePath("MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer")
 MAIN_PAUSE_MENU_SCENE = ExtResource("4_uyt7p")
 
-[node name="MenuVBox" type="VBoxContainer" parent="."]
+[node name="MenuVBox" type="VBoxContainer" parent="." unique_id=1931614991]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TopPanel" type="PanelContainer" parent="MenuVBox"]
+[node name="TopPanel" type="PanelContainer" parent="MenuVBox" unique_id=2117010106]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8mb3f")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/TopPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/TopPanel" unique_id=385620301]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer" unique_id=1870647772]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.64
-theme_override_constants/margin_left = 56
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_bottom = 28
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer" unique_id=2140292660]
 layout_mode = 2
 theme_override_constants/separation = 19
 
-[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1968898987]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.3822, 0.432017, 0.98, 1)
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 25
 text = "MENU"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1309495764]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MenuTitleControl" type="Control" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="MenuTitleControl" type="Control" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1459412924]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MenuTitleContainer" type="PanelContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl"]
+[node name="MenuTitleContainer" type="PanelContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl" unique_id=1099566743]
 z_index = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = -3.0
 offset_top = -14.0
-offset_right = 304.0
-offset_bottom = 57.0
+offset_right = 143.0
+offset_bottom = 33.5
 size_flags_horizontal = 3
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2kjxs")
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer" unique_id=1304605605]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 32
+theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_bottom = 8
 
-[node name="MenuTitleLabel" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer/MarginContainer"]
+[node name="MenuTitleLabel" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuTitleControl/MenuTitleContainer/MarginContainer" unique_id=1450971819]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 22
 text = "Title"
 
-[node name="VSeparator" type="VSeparator" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1507169422]
 layout_mode = 2
 theme_override_constants/separation = 200
 theme_override_styles/separator = SubResource("StyleBoxEmpty_4fcuu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MenuVBox/TopPanel/HBoxContainer" unique_id=1062676709]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_top = 101
+theme_override_constants/margin_top = 64
 theme_override_constants/margin_bottom = 16
 
-[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer2"]
+[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/MarginContainer2" unique_id=1478492758]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.65, 0.463667, 0.091, 1)
 text = "‖  Area Name"
 
-[node name="CenterContainer2" type="CenterContainer" parent="MenuVBox/TopPanel/HBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="MenuVBox/TopPanel/HBoxContainer" unique_id=1480190505]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_stretch_ratio = 0.5
 
-[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/CenterContainer2"]
+[node name="Label" type="Label" parent="MenuVBox/TopPanel/HBoxContainer/CenterContainer2" unique_id=1172537771]
 layout_mode = 2
 text = "Level Name"
 
-[node name="HSeparator" type="HSeparator" parent="MenuVBox"]
+[node name="HSeparator" type="HSeparator" parent="MenuVBox" unique_id=342788966]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/separator = ExtResource("3_tlkq7")
 
-[node name="CenterMargin" type="MarginContainer" parent="MenuVBox"]
+[node name="CenterMargin" type="MarginContainer" parent="MenuVBox" unique_id=539466971]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.16
 mouse_filter = 2
 theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 17
 
-[node name="MenuContainer" type="PanelContainer" parent="MenuVBox/CenterMargin"]
+[node name="MenuContainer" type="PanelContainer" parent="MenuVBox/CenterMargin" unique_id=1255116051]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MainPauseMenu" parent="MenuVBox/CenterMargin/MenuContainer" instance=ExtResource("4_uyt7p")]
+[node name="MainPauseMenu" parent="MenuVBox/CenterMargin/MenuContainer" unique_id=245287656 instance=ExtResource("4_uyt7p")]
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="MenuVBox"]
+[node name="HSeparator2" type="HSeparator" parent="MenuVBox" unique_id=497749616]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxTexture_6knpq")
 
-[node name="BottomPanel" type="PanelContainer" parent="MenuVBox"]
+[node name="BottomPanel" type="PanelContainer" parent="MenuVBox" unique_id=790131748]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_cfnwd")
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/BottomPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/BottomPanel" unique_id=275330086]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer" unique_id=154149730]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer" unique_id=1362314095]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.22
@@ -215,23 +214,23 @@ theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer" unique_id=1894878478]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 24
 
-[node name="KudosHBox" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="KudosHBox" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=2142520464]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/KudosHBox"]
+[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/KudosHBox" unique_id=1158633247]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.47, 0.25944, 0.0188, 1)
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 25
 text = "kudos"
 
-[node name="KudosCounterLabel" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/KudosHBox"]
+[node name="KudosCounterLabel" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/KudosHBox" unique_id=338208551]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.98, 0.54096, 0.0392, 1)
@@ -240,18 +239,18 @@ theme_override_constants/outline_size = 16
 text = "0"
 script = ExtResource("8_2o81t")
 
-[node name="TimeHBox" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="TimeHBox" type="HBoxContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1620031393]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TimeHBox"]
+[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TimeHBox" unique_id=2139647757]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.0196078, 0.254902, 0.470588, 1)
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 25
 text = "time"
 
-[node name="TimeLabel" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TimeHBox"]
+[node name="TimeLabel" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TimeHBox" unique_id=272079761]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.04, 0.536, 1, 1)
@@ -260,27 +259,27 @@ theme_override_constants/outline_size = 16
 text = "00:00:00"
 script = ExtResource("9_l8ho1")
 
-[node name="VSeparator" type="VSeparator" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer" unique_id=1133693840]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 6
 theme_override_styles/separator = SubResource("StyleBoxLine_e8ykg")
 
-[node name="VSeparator2" type="VSeparator" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer" unique_id=1299572635]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_e8ykg")
 
-[node name="MarginContainer2" type="MarginContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer" unique_id=146958778]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.8
 mouse_filter = 2
 theme_override_constants/margin_left = 16
 
-[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer2"]
+[node name="Label" type="Label" parent="MenuVBox/BottomPanel/MarginContainer/HBoxContainer/MarginContainer2" unique_id=97232606]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.4266, 0.59013, 0.79, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 25
 text = "Button description"

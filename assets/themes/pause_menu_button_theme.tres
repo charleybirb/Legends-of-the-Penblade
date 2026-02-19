@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://di1av1pfheygj"]
+
+[ext_resource type="StyleBox" uid="uid://dx1g2eupywqim" path="res://assets/themes/style_boxes/pause_menu_button_stylebox.tres" id="1_y4xxj"]
+
+[resource]
+Label/font_sizes/font_size = 18
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 32
+MarginContainer/constants/margin_top = 8
+PanelContainer/styles/panel = ExtResource("1_y4xxj")

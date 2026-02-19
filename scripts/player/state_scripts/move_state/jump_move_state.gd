@@ -1,11 +1,11 @@
 extends MoveState
 
-const JUMP_HEIGHT := 2.0
+const JUMP_HEIGHT := 1.65
 const APEX_DURATION := 0.44 #time it takes to reach the height of the jump
 const SPEED := 4.2
 const ACCELERATION := 7.0
 const ROTATION_SPEED := 4.0
-const HOLD_TIME := 0.2
+const HOLD_TIME := 0.1
 
 var time_apex_reached : float
 var can_fall := false
@@ -33,15 +33,16 @@ func exit() -> void:
 func physics_update(input: InputPackage, delta: float) -> void:
 	if "jump" in input.released_actions:
 		can_fall = true
+	var curr_time : float = Time.get_unix_time_from_system()
 	if is_apex_reached:
-		if Time.get_unix_time_from_system() - time_apex_reached > HOLD_TIME:
+		if (curr_time - time_apex_reached) > HOLD_TIME:
 			can_fall = true
 	
 	if VELOCITY_COMPONENT.velocity.y > 0:
 		VELOCITY_COMPONENT.apply_gravity(delta, 2.1)
 	else:
 		if !is_apex_reached:
-			time_apex_reached = Time.get_unix_time_from_system()
+			time_apex_reached = curr_time
 		is_apex_reached = true
 	var speed = SPEED if !is_apex_reached else SPEED / 2
 	if input.input_direction != Vector2.ZERO:

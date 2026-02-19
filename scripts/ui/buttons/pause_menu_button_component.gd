@@ -3,7 +3,7 @@ extends Node
 signal submenu_opened(submenu: SubMenu, menu_title: String)
 signal submenu_closed
 
-const FOCUS_STYLEBOX := preload("res://themes/style_boxes/pause_menu_button_focus_stylebox.tres")
+const FOCUS_STYLEBOX := preload("uid://crxse1k4aw41q")
 
 @export var SUBMENU_SCENE : PackedScene
 @export var BUTTON_TITLE : String

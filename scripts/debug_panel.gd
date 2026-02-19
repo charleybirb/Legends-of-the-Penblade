@@ -6,7 +6,7 @@ var debug_labels := {}
 
 func _ready() -> void:
 	Global.debug = self
-	DisplayServer.window_set_position(DisplayServer.screen_get_size() / 4)
+	#DisplayServer.window_set_position(DisplayServer.screen_get_size() / 4)
 
 
 func _unhandled_input(event: InputEvent) -> void:

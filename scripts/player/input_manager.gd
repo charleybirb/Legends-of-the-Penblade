@@ -13,6 +13,10 @@ func gather_input() -> InputPackage:
 	new_input.input_direction = Input.get_vector(
 		"move_left", "move_right", 
 		"move_forward", "move_back")
+	new_input.camera_direction = Input.get_vector(
+		"camera_left", "camera_right",
+		"camera_up", "camera_down"
+	)
 	
 	if new_input.input_direction != Vector2.ZERO:
 		new_input.actions.append("run")

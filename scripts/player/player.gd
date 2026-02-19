@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export_group("ConnectedNodes")
 @export var INPUT_MANAGER : InputManager
 @export var CAMERA_CONTROLLER : CameraController
 @export var STATE_MACHINES : PlayerStateMachine

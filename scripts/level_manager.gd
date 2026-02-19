@@ -2,7 +2,7 @@ class_name LevelManager
 extends Node
 
 const LEVEL_SCENES := {
-	"prototype_level": preload("res://prototyping/prototype_scenes/prototype_level.tscn")
+	"prototype_level": preload("uid://bx0tnf4mos5bh")
 }
 
 @export var LevelViewport : Viewport

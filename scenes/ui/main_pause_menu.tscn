@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://de0j1mtiy1lu7"]
+[gd_scene format=3 uid="uid://de0j1mtiy1lu7"]
 
-[ext_resource type="Theme" uid="uid://di1av1pfheygj" path="res://themes/pause_menu_button_theme.tres" id="1_tcc14"]
-[ext_resource type="Script" path="res://scripts/ui/submenu.gd" id="1_v6pc4"]
+[ext_resource type="Theme" uid="uid://di1av1pfheygj" path="res://assets/themes/pause_menu_button_theme.tres" id="1_tcc14"]
+[ext_resource type="Script" uid="uid://bj5jiohombvbs" path="res://scripts/ui/submenu.gd" id="1_v6pc4"]
 [ext_resource type="PackedScene" uid="uid://dsma3gawn3d00" path="res://scenes/ui/pause_menu_button.tscn" id="2_tw1ox"]
-[ext_resource type="Script" path="res://scripts/ui/buttons/pause_menu_button_component.gd" id="3_665vv"]
+[ext_resource type="Script" uid="uid://ch5x5iy8joy0m" path="res://scripts/ui/buttons/pause_menu_button_component.gd" id="3_665vv"]
 [ext_resource type="PackedScene" uid="uid://bmghdjq68ascg" path="res://scenes/ui/submenus/config_submenu.tscn" id="4_j786x"]
-[ext_resource type="Script" path="res://scripts/ui/right_element_component.gd" id="6_88avd"]
+[ext_resource type="Script" uid="uid://cadc0c6dok4wk" path="res://scripts/ui/right_element_component.gd" id="6_88avd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgq44"]
 
@@ -51,7 +51,7 @@ border_width_right = 6
 border_width_bottom = 6
 border_color = Color(0.227451, 0.227451, 0.368627, 1)
 
-[node name="MainPauseMenu" type="PanelContainer" node_paths=PackedStringArray("right_elements")]
+[node name="MainPauseMenu" type="PanelContainer" unique_id=1898425245 node_paths=PackedStringArray("right_elements")]
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,71 +63,71 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_jgq44")
 script = ExtResource("1_v6pc4")
 right_elements = NodePath("MenuContentsHBox/MarginContainer/Control")
 
-[node name="MenuContentsHBox" type="HBoxContainer" parent="."]
+[node name="MenuContentsHBox" type="HBoxContainer" parent="." unique_id=2000771671]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="MenuButtonsVBox" type="VBoxContainer" parent="MenuContentsHBox"]
+[node name="MenuButtonsVBox" type="VBoxContainer" parent="MenuContentsHBox" unique_id=133208144]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme = ExtResource("1_tcc14")
-theme_override_constants/separation = 4
+theme_override_constants/separation = 2
 
-[node name="ItemsButton" parent="MenuContentsHBox/MenuButtonsVBox" instance=ExtResource("2_tw1ox")]
+[node name="ItemsButton" parent="MenuContentsHBox/MenuButtonsVBox" unique_id=762601155 instance=ExtResource("2_tw1ox")]
 layout_mode = 2
 
-[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/ItemsButton"]
+[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/ItemsButton" unique_id=10377765]
 script = ExtResource("3_665vv")
 BUTTON_TITLE = "Items"
 
-[node name="EquipmentButton" parent="MenuContentsHBox/MenuButtonsVBox" instance=ExtResource("2_tw1ox")]
+[node name="EquipmentButton" parent="MenuContentsHBox/MenuButtonsVBox" unique_id=1547710125 instance=ExtResource("2_tw1ox")]
 layout_mode = 2
 
-[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/EquipmentButton"]
+[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/EquipmentButton" unique_id=1970345405]
 script = ExtResource("3_665vv")
 BUTTON_TITLE = "Equipment"
 
-[node name="AbilitiesButton" parent="MenuContentsHBox/MenuButtonsVBox" instance=ExtResource("2_tw1ox")]
+[node name="AbilitiesButton" parent="MenuContentsHBox/MenuButtonsVBox" unique_id=105219397 instance=ExtResource("2_tw1ox")]
 layout_mode = 2
 
-[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/AbilitiesButton"]
+[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/AbilitiesButton" unique_id=601354801]
 script = ExtResource("3_665vv")
 BUTTON_TITLE = "Abilities"
 
-[node name="StatusButton" parent="MenuContentsHBox/MenuButtonsVBox" instance=ExtResource("2_tw1ox")]
+[node name="StatusButton" parent="MenuContentsHBox/MenuButtonsVBox" unique_id=906065197 instance=ExtResource("2_tw1ox")]
 layout_mode = 2
 
-[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/StatusButton"]
+[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/StatusButton" unique_id=1200666341]
 script = ExtResource("3_665vv")
 BUTTON_TITLE = "Status"
 
-[node name="JournalButton" parent="MenuContentsHBox/MenuButtonsVBox" instance=ExtResource("2_tw1ox")]
+[node name="JournalButton" parent="MenuContentsHBox/MenuButtonsVBox" unique_id=1877418279 instance=ExtResource("2_tw1ox")]
 layout_mode = 2
 
-[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/JournalButton"]
+[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/JournalButton" unique_id=469468757]
 script = ExtResource("3_665vv")
 BUTTON_TITLE = "Journal"
 
-[node name="ConfigButton" parent="MenuContentsHBox/MenuButtonsVBox" instance=ExtResource("2_tw1ox")]
+[node name="ConfigButton" parent="MenuContentsHBox/MenuButtonsVBox" unique_id=1923291910 instance=ExtResource("2_tw1ox")]
 layout_mode = 2
 
-[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/ConfigButton"]
+[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/ConfigButton" unique_id=1124196060]
 script = ExtResource("3_665vv")
 SUBMENU_SCENE = ExtResource("4_j786x")
 BUTTON_TITLE = "Config"
 
-[node name="QuitButton" parent="MenuContentsHBox/MenuButtonsVBox" instance=ExtResource("2_tw1ox")]
+[node name="QuitButton" parent="MenuContentsHBox/MenuButtonsVBox" unique_id=1963770328 instance=ExtResource("2_tw1ox")]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/QuitButton"]
+[node name="PauseMenuButtonComponent" type="Node" parent="MenuContentsHBox/MenuButtonsVBox/QuitButton" unique_id=1340662503]
 script = ExtResource("3_665vv")
 BUTTON_TITLE = "Quit"
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuContentsHBox"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuContentsHBox" unique_id=935168136]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.89
@@ -135,11 +135,11 @@ mouse_filter = 2
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
-[node name="Control" type="Control" parent="MenuContentsHBox/MarginContainer"]
+[node name="Control" type="Control" parent="MenuContentsHBox/MarginContainer" unique_id=854408438]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="StatsHBox" type="HBoxContainer" parent="MenuContentsHBox/MarginContainer/Control"]
+[node name="StatsHBox" type="HBoxContainer" parent="MenuContentsHBox/MarginContainer/Control" unique_id=1152474066]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -153,100 +153,100 @@ grow_vertical = 0
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="RightElementComponent" type="Node" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox"]
+[node name="RightElementComponent" type="Node" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox" unique_id=705185406]
 script = ExtResource("6_88avd")
 
-[node name="TitleVBox" type="VBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox"]
+[node name="TitleVBox" type="VBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox" unique_id=783115038]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.12
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="CornerPanel" type="Panel" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox"]
+[node name="CornerPanel" type="Panel" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox" unique_id=1935215470]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_niukx")
 
-[node name="TitlePanel" type="PanelContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox"]
+[node name="TitlePanel" type="PanelContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox" unique_id=2054692737]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cft0j")
 
-[node name="CenterContainer" type="CenterContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel"]
+[node name="CenterContainer" type="CenterContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel" unique_id=1823489234]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer" unique_id=267194449]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer/MarginContainer" unique_id=2040962802]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=1706692693]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.54, 0.2916, 0.36612, 1)
 theme_override_font_sizes/font_size = 20
 text = "LV"
 
-[node name="Label2" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=736765107]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.568627, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "HP"
 
-[node name="Label3" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/TitleVBox/TitlePanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=594515740]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.04, 0.536, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "MP"
 
-[node name="JaretStatBox" type="VBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox"]
+[node name="JaretStatBox" type="VBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox" unique_id=646885924]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="NamePanel" type="PanelContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox"]
+[node name="NamePanel" type="PanelContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox" unique_id=2051793429]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mgdkx")
 
-[node name="CenterContainer" type="CenterContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/NamePanel"]
+[node name="CenterContainer" type="CenterContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/NamePanel" unique_id=9036203]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/NamePanel/CenterContainer"]
+[node name="Label" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/NamePanel/CenterContainer" unique_id=619695036]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Jaret"
 
-[node name="StatsPanel" type="PanelContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox"]
+[node name="StatsPanel" type="PanelContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox" unique_id=522056313]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_aen7v")
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel" unique_id=128645344]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_right = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer" unique_id=176312269]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer" unique_id=1322595039]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.45098, 0.243137, 0.305882, 1)
@@ -254,41 +254,41 @@ theme_override_font_sizes/font_size = 25
 text = "1
 "
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer" unique_id=2071190144]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label2" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=190612908]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0, 0.568627, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "5/ "
 
-[node name="Label3" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label3" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1698208357]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0, 0.541176, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = " 5"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer" unique_id=1201833257]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Label3" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2069795639]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0.0352941, 0.45098, 0.839216, 1)
 theme_override_font_sizes/font_size = 25
 text = "3/ "
 
-[node name="Label4" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Label4" type="Label" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox/JaretStatBox/StatsPanel/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=793282510]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.0352941, 0.427451, 0.796078, 1)
 theme_override_font_sizes/font_size = 25
 text = " 3"
 
-[node name="Panel" type="Panel" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox"]
+[node name="Panel" type="Panel" parent="MenuContentsHBox/MarginContainer/Control/StatsHBox" unique_id=1559151955]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.15
