@@ -3,6 +3,7 @@ extends Node
 
 @export var CAMERA_CONTROLLER : CameraController
 @export var VELOCITY_COMPONENT : VelocityComponent
+
 var TARGET : CharacterBody3D
 var current_move_state : MoveState
 
