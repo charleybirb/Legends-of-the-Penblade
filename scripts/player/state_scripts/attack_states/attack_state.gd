@@ -13,17 +13,6 @@ var PLAYER : Player
 
 var targets_hit : Array[Node3D]
 
-#func _on_area_entered(area: Area3D) -> void:
-	#if area.is_in_group("hitboxes"):
-		#var target : Node3D = area.get_parent()
-		#if not target in targets_hit:
-			#attack(target)
-
-#
-#func _ready() -> void:
-	#HITBOX.connect("area_entered", _on_area_entered)
-			
-
 
 func enter() -> void:
 	HITBOX.set_collision_layer_value(4, true)
@@ -40,13 +29,6 @@ func exit() -> void:
 func apply_strength_multiplier() -> void:
 	PLAYER.full_strength = PLAYER.base_strength * STRENGTH_MULTIPLIER
 
-#
-#func attack(target: Node3D) -> void:
-	#targets_hit.append(target)
-	#target.take_damage(round(BASE_STRENGTH * STRENGTH_MULTIPLIER))
-	#target.knockback(KNOCKBACK_STRENGTH, PLAYER.direction)
-	#Global.debug.update_label("EnemyAttacked", str(targets_hit))
-	#
 
 func play_animation(animation: String, blend:=-1.0, speed:=1.0) -> void:
 	if ANIMATION_PLAYER.current_animation == animation: return

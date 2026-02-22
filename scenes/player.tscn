@@ -2485,7 +2485,6 @@ shape = SubResource("CapsuleShape3D_sk26b")
 
 [node name="ShadowRay" type="RayCast3D" parent="Model" unique_id=844933731 node_paths=PackedStringArray("SHADOW")]
 target_position = Vector3(0, -2, 0)
-collision_mask = 3
 script = ExtResource("2_kg6dj")
 SHADOW = NodePath("../Shadow")
 

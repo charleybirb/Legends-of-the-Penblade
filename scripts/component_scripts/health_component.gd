@@ -34,12 +34,12 @@ func _ready() -> void:
 
 
 func take_damage(dmg_amount: float) -> void:
-	curr_health -= dmg_amount - DEFENCE
+	var defended_damage : float = dmg_amount - DEFENCE
+	curr_health -= defended_damage
 	if curr_health <= 0.0:
 		died.emit()
 		return
 	damage_taken.emit(dmg_amount)
-	print(curr_health)
 
 
 func heal(health_amount: float) -> void:

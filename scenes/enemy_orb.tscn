@@ -4,17 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://s1io4f0vay7k" path="res://assets/models/nature_creature_light.blend" id="2_wqa4c"]
 [ext_resource type="Script" uid="uid://c3qkbtq104htq" path="res://scripts/component_scripts/health_component.gd" id="3_5e40v"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0a6o"]
+radius = 0.2006836
+height = 1.7203455
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2plf8"]
 height = 1.57301
-radius = 0.493272
+radius = 0.37060547
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kdmxo"]
 height = 3.49258
 radius = 17.2415
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0a6o"]
-radius = 0.115087
-height = 0.536201
 
 [node name="Flower" type="CharacterBody3D" unique_id=873657236 node_paths=PackedStringArray("HURTBOX", "DETECT_AREA", "FOCUS_POINT", "HEALTH_COMPONENT")]
 collision_layer = 3
@@ -27,6 +27,13 @@ HEALTH_COMPONENT = NodePath("HealthComponent")
 
 [node name="nature_creature_light" parent="." unique_id=806552364 instance=ExtResource("2_wqa4c")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=33070449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85047823, -0.0211002)
+shape = SubResource("CapsuleShape3D_q0a6o")
+
+[node name="FocusPoint" type="Marker3D" parent="." unique_id=915918693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98941, -1.24849)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=271317413 node_paths=PackedStringArray("HURTBOX", "INVINSIBILITY_TIMER")]
 script = ExtResource("3_5e40v")
@@ -80,10 +87,3 @@ shape = SubResource("CylinderShape3D_kdmxo")
 [node name="Attack" type="Node" parent="StateMachine/AlertState" unique_id=8989265]
 
 [node name="AttackState" type="Node" parent="StateMachine" unique_id=1047860826]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=33070449]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258406, -0.0211002)
-shape = SubResource("CapsuleShape3D_q0a6o")
-
-[node name="FocusPoint" type="Marker3D" parent="." unique_id=915918693]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98941, -1.24849)
