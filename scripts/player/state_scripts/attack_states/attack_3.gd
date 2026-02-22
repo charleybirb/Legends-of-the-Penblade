@@ -1,5 +1,7 @@
 extends AttackState
 
+
 func enter() -> void:
-	COLLISION_AREA.monitoring = true
+	HITBOX.monitoring = true
+	apply_strength_multiplier()
 	play_animation("attack3", 0.1)

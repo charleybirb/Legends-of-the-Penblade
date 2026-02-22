@@ -8,17 +8,18 @@ const DECELERATION := 10
 const FOLLOW_DISTANCE := 1.0
 const WEIGHT := 1.0
 
-@export var HITBOX : Area3D
+@export var HURTBOX : Area3D
 @export var DETECT_AREA : Area3D
 @export var ANIMATION_PLAYER : AnimationPlayer
 @export var FOCUS_POINT : Marker3D
+@export var HEALTH_COMPONENT : HealthComponent
 
 var health := 10
 var defense := 1
 var player : CharacterBody3D
 
 
-func _on_body_entered(body: Node3D):
+func _on_body_detected(body: Node3D):
 	if body.name != "Player":
 		return
 	player = body
@@ -26,16 +27,17 @@ func _on_body_entered(body: Node3D):
 	#ANIMATION_PLAYER.play("walk", 0.3, 2.0)
 	
 
-func _on_body_exited(body: Node3D):
-	if body.name != "Player":
+func _on_body_undetected(body: Node3D):
+	if body.name != &"Player":
 		return
 	player = null
 	#ANIMATION_PLAYER.play("idle", 0.3)
 
 func _ready() -> void:
-	HITBOX.add_to_group("enemy_hitboxes")
-	DETECT_AREA.connect("body_entered", _on_body_entered)
-	DETECT_AREA.connect("body_exited", _on_body_exited)
+	HEALTH_COMPONENT.connect(&"died", die)
+	HURTBOX.connect(&"area_entered", Callable(HEALTH_COMPONENT, &"_on_area_entered"))
+	DETECT_AREA.connect("body_entered", _on_body_detected)
+	DETECT_AREA.connect("body_exited", _on_body_undetected)
 
 
 func _physics_process(delta: float) -> void:
@@ -61,11 +63,8 @@ func knockback(knockback_strength: float, direction: Vector3) ->  void:
 	velocity = knockback_strength * direction
 	
 	
-func take_damage(damage: int) -> void:
-	var defended_damage := damage - defense
-	health -= defended_damage
-	if health <= 0:
-		queue_free()
+func die() -> void:
+	queue_free()
 		#return
 	#ANIMATION_PLAYER.speed_scale = 4
 	#await get_tree().create_timer(0.5).timeout

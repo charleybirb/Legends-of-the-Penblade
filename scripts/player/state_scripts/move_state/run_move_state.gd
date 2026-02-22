@@ -8,32 +8,32 @@ const ROTATION_SPEED := 8.0
 
 var speed := RUN_SPEED
 
-func check_relevance(input: InputPackage) -> String:
+func check_relevance(input: InputPackage) -> StringName:
 	input.actions.sort_custom(move_state_priority_sort)
-	if !TARGET.is_on_floor():
+	if !PLAYER.is_on_floor():
 		if check_fall_distance():
-			return "fall"
-		return "okay"
+			return &"fall"
+		return &"okay"
 	else:
 		if FALL_RAY.enabled: FALL_RAY.enabled = false
-		if input.actions[0] != "run" and input.actions[0] != "walk":
+		if input.actions[0] != &"run" and input.actions[0] != &"walk":
 			return input.actions[0]
-		return "okay"
+		return &"okay"
 
 
 func enter(_previous_move_state: MoveState) -> void:
-	play_animation("run", 0.3, 1.6)
+	play_animation(&"run", 0.3, 1.6)
 	speed = RUN_SPEED
 
 
 func physics_update(input: InputPackage, delta: float) -> void:
-	if "walk" in input.action_modifiers and speed == RUN_SPEED:
+	if &"walk" in input.action_modifiers and speed == RUN_SPEED:
 		speed = WALK_SPEED
-		play_animation("walk", 0.3, 1.6)
-	elif "walk" in input.released_action_modifiers:
-		play_animation("run", 0.3, 1.6)
+		play_animation(&"walk", 0.3, 1.6)
+	elif &"walk" in input.released_action_modifiers:
+		play_animation(&"run", 0.3, 1.6)
 		speed = RUN_SPEED
 	VELOCITY_COMPONENT.update_velocity(input, speed, ACCELERATION, delta)
 	VELOCITY_COMPONENT.update_rotation(ROTATION_SPEED, delta)
-	if !TARGET.is_on_floor(): VELOCITY_COMPONENT.apply_gravity(delta)
+	if !PLAYER.is_on_floor(): VELOCITY_COMPONENT.apply_gravity(delta)
 	VELOCITY_COMPONENT.apply_movement()

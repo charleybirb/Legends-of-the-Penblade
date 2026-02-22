@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://38cpuckweh1l" path="res://scenes/player.tscn" id="1_og3mw"]
 [ext_resource type="Material" uid="uid://dv1d1x1yjbfil" path="res://prototyping/prototype_materials/black.tres" id="2_v1beu"]
 [ext_resource type="Material" uid="uid://bdtl0xcvfn3gq" path="res://prototyping/prototype_materials/orange.tres" id="3_0hslt"]
+[ext_resource type="PackedScene" uid="uid://b8ts6xd75p5n4" path="res://scenes/enemy_orb.tscn" id="4_cvno0"]
 
 [sub_resource type="Environment" id="Environment_ek0ic"]
 background_mode = 2
@@ -275,3 +276,6 @@ mesh = SubResource("BoxMesh_cvno0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBodies/StaticBody3D20" unique_id=1391659367]
 shape = SubResource("ConcavePolygonShape3D_s5g68")
+
+[node name="EnemyOrb" parent="." unique_id=51945206 instance=ExtResource("4_cvno0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)

@@ -3,7 +3,7 @@ extends Node
 
 const DECELERATION := 10.0
 
-@export var TARGET : CharacterBody3D
+@export var PLAYER : Player
 @export var ANIMATION_PLAYER : AnimationPlayer
 @export var WEAPON_SPOT : BoneAttachment3D
 
@@ -21,18 +21,18 @@ func _on_animation_finished(animation: String) -> void:
 	if not animation.begins_with("attack"): return
 	end_attack()
 	is_attacking = false
-	ANIMATION_PLAYER.disconnect("animation_finished", Callable(self, "_on_animation_finished"))
+	ANIMATION_PLAYER.disconnect(&"animation_finished", _on_animation_finished)
 	get_parent().is_action_ongoing = false
 
 func _ready() -> void:
 	await owner.ready
-	for attack in ATTACK_STATES:
-		attack.ATTACKER = TARGET
+	for attack : AttackState in ATTACK_STATES:
+		attack.PLAYER = PLAYER
 		attack.ANIMATION_PLAYER = ANIMATION_PLAYER
 
 
 func start_attack() -> void:
-	ANIMATION_PLAYER.connect("animation_finished", Callable(self, "_on_animation_finished"))
+	ANIMATION_PLAYER.connect(&"animation_finished", _on_animation_finished)
 
 	is_attacking = true
 	if current_attack_state: current_attack_state.exit()

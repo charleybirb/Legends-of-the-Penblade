@@ -11,6 +11,7 @@ var direction : Vector3
 var last_direction : Vector3
 var last_camera_rotation : float
 
+
 func update_velocity(input: InputPackage, speed: float, acceleration: float, delta: float) -> void:
 	direction = Vector3(input.input_direction.x, 0, input.input_direction.y)
 	if direction != last_direction and TARGET.is_on_floor(): acceleration *= 6
@@ -37,6 +38,7 @@ func update_rotation(rotation_speed: float, delta: float, is_idle: = false) -> v
 	var target_rotation := atan2(target_direction.x, target_direction.z) - TARGET.rotation.y
 	ROOT_MESH.rotation.y = lerp_angle(ROOT_MESH.rotation.y, target_rotation, rotation_speed *  delta)
 	TARGET.direction = ROOT_MESH.global_transform.basis.z
+
 
 func jump(jump_height: float, apex_duration: float) -> void:
 	velocity.y = 2 * jump_height / apex_duration

@@ -9,7 +9,6 @@
 [ext_resource type="StyleBox" uid="uid://n8x78il7dvkg" path="res://assets/themes/style_boxes/command_active_stylebox.tres" id="4_qg0n6"]
 [ext_resource type="PackedScene" uid="uid://ce0rbhsjqoww1" path="res://scenes/ui/action_menu.tscn" id="5_1ysoe"]
 [ext_resource type="StyleBox" uid="uid://doj3c5yjfsetr" path="res://assets/themes/style_boxes/battle_active_button.tres" id="6_l70qt"]
-[ext_resource type="PackedScene" uid="uid://buk6mte67edso" path="res://scenes/ui/title_menu.tscn" id="7_tevlc"]
 [ext_resource type="Texture2D" uid="uid://ux0koyxcr71a" path="res://assets/images/jaret_portrait.png" id="10_8nf4x"]
 [ext_resource type="Script" uid="uid://bo545tmb6cxkt" path="res://scripts/ui/time_manager.gd" id="11_yhb4o"]
 
@@ -60,9 +59,6 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 158.0
 offset_bottom = 77.0
-
-[node name="TitleMenu" parent="GUI" unique_id=656540756 instance=ExtResource("7_tevlc")]
-visible = false
 
 [node name="Portrait" type="NinePatchRect" parent="GUI" unique_id=590685535]
 texture_filter = 1

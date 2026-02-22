@@ -11,16 +11,16 @@ var action_start_time := 0.0
 var queue_start_time := 0.0
 var max_queue_time := 0.6
 
-func check_relevance(input: InputPackage) -> String:
+func check_relevance(input: InputPackage) -> StringName:
 	if !is_action_ongoing:
 		if !is_action_queued:
 			input.actions.sort_custom(move_state_priority_sort)
 			return input.actions[0]
 		else:
 			is_action_queued = false
-			return "primary_action"
+			return &"primary_action"
 	else:
-		return "okay"
+		return &"okay"
 
 
 func enter(_previous_move_state: MoveState) -> void:
@@ -33,7 +33,7 @@ func enter(_previous_move_state: MoveState) -> void:
 
 
 func update(input: InputPackage, _delta: float) -> void:
-	if "primary_action" in input.actions and get_action_time() >= QUEUE_BUFFER_TIME:
+	if &"primary_action" in input.actions and get_action_time() >= QUEUE_BUFFER_TIME:
 		is_action_queued = true
 		queue_start_time = get_time()
 	if is_action_queued and get_queue_time() >= max_queue_time:

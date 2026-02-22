@@ -7,7 +7,7 @@ extends Node
 
 var VELOCITY_COMPONENT : VelocityComponent
 var ANIMATION_PLAYER : AnimationPlayer
-var TARGET : CharacterBody3D
+var PLAYER : Player
 
 var enter_state_time : float
 
@@ -26,7 +26,7 @@ static var move_state_priority : Dictionary = {
 }
 
 
-static func move_state_priority_sort(a: String, b: String) -> bool:
+static func move_state_priority_sort(a: StringName, b: StringName) -> bool:
 	if move_state_priority[a] > move_state_priority[b]:
 		return true
 	else:
@@ -70,7 +70,7 @@ func update(_input: InputPackage, _delta: float) -> void:
 func physics_update(_input: InputPackage, _delta: float) -> void:
 	pass
 
-func check_relevance(_input: InputPackage) -> String:
+func check_relevance(_input: InputPackage) -> StringName:
 	push_warning("implement the check_relevance function on move state")
 	return "error, implement the check_relevance function on move state"
 

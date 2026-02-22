@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @export_group("ConnectedNodes")
 @export var INPUT_MANAGER : InputManager
@@ -6,6 +7,9 @@ extends CharacterBody3D
 @export var STATE_MACHINES : PlayerStateMachine
 
 var direction : Vector3
+var base_strength : float = 1.0
+var full_strength : float = 1.0
+
 
 func _physics_process(delta: float) -> void:
 	var input = INPUT_MANAGER.gather_input()

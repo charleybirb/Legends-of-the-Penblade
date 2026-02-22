@@ -4,7 +4,7 @@ extends Node
 @export var CAMERA_CONTROLLER : CameraController
 @export var VELOCITY_COMPONENT : VelocityComponent
 @export var ANIMATION_PLAYER : AnimationPlayer
-var TARGET : CharacterBody3D
+var PLAYER : Player
 var current_move_state : MoveState
 var is_jump_queued := false
 var previous_move_state : MoveState
@@ -22,10 +22,10 @@ var previous_move_state : MoveState
 
 
 func _ready() -> void:
-	TARGET = get_owner()
+	PLAYER = get_owner()
 	current_move_state = STATES["idle"]
 	for state in STATES.values():
-		state.TARGET = TARGET
+		state.PLAYER = PLAYER
 		state.VELOCITY_COMPONENT = VELOCITY_COMPONENT
 		state.ANIMATION_PLAYER = ANIMATION_PLAYER
 

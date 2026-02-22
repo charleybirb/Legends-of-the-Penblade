@@ -11,17 +11,18 @@ var time_apex_reached : float
 var can_fall := false
 var is_apex_reached := false
 
-func check_relevance(_input: InputPackage) -> String:
+
+func check_relevance(_input: InputPackage) -> StringName:
 	if can_fall:
-		return "fall"
-	if TARGET.is_on_floor():
-		return "land"
-	return "okay"
+		return &"fall"
+	if PLAYER.is_on_floor():
+		return &"land"
+	return &"okay"
 
 
 func enter(_previous_move_state: MoveState) -> void:
 	VELOCITY_COMPONENT.jump(JUMP_HEIGHT, APEX_DURATION)
-	play_animation("jump", -1)
+	play_animation(&"jump", -1)
 
 
 func exit() -> void:
@@ -31,7 +32,7 @@ func exit() -> void:
 
 
 func physics_update(input: InputPackage, delta: float) -> void:
-	if "jump" in input.released_actions:
+	if &"jump" in input.released_actions:
 		can_fall = true
 	var curr_time : float = Time.get_unix_time_from_system()
 	if is_apex_reached:
