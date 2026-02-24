@@ -16,7 +16,7 @@ radius = 0.37060547
 height = 3.49258
 radius = 17.2415
 
-[node name="Flower" type="CharacterBody3D" unique_id=873657236 node_paths=PackedStringArray("HURTBOX", "DETECT_AREA", "FOCUS_POINT", "HEALTH_COMPONENT")]
+[node name="FlowerFolly" type="CharacterBody3D" unique_id=873657236 node_paths=PackedStringArray("HURTBOX", "DETECT_AREA", "FOCUS_POINT", "HEALTH_COMPONENT")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_da2us")

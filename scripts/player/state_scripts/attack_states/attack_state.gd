@@ -8,6 +8,7 @@ const BASE_STRENGTH : int = 1
 @export var KNOCKBACK_STRENGTH : float = 10.0
 @export var ANIM_NAME : StringName
 
+var SFX_MANAGER : SFXManager
 var ANIMATION_PLAYER : AnimationPlayer
 var PLAYER : Player
 
@@ -18,6 +19,7 @@ func enter() -> void:
 	HITBOX.set_collision_layer_value(4, true)
 	apply_strength_multiplier()
 	play_animation(ANIM_NAME, 0.1)
+	SFX_MANAGER.get_sound(&"attack")
 
 
 func exit() -> void:
