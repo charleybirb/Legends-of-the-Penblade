@@ -11,3 +11,8 @@ signal secondary_action_blocked
 #Debug Signals
 signal debug_updated(title: String, value: String)
 signal debug_removed(title: String)
+
+#Enemy Health Signals
+signal enemy_health_changed(curr_health: int, max_health: int)
+signal enemy_in_range
+signal enemy_out_of_range

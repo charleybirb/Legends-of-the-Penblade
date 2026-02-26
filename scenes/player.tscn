@@ -2927,5 +2927,7 @@ SOUNDS = Dictionary[StringName, String]({
 })
 
 [node name="SFX1" type="AudioStreamPlayer3D" parent="SFXManager" unique_id=640501211]
+unit_size = 3.0
 
 [node name="SFX2" type="AudioStreamPlayer3D" parent="SFXManager" unique_id=783446317]
+unit_size = 3.0

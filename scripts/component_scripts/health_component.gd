@@ -30,16 +30,15 @@ func _on_timer_timeout() -> void:
 
 func _ready() -> void:
 	INVINSIBILITY_TIMER.connect(&"timeout", _on_timer_timeout)
-	#HURTBOX.add_to_group(&"hurtboxes")
 
 
 func take_damage(dmg_amount: float) -> void:
 	var defended_damage : float = dmg_amount - DEFENCE
 	curr_health -= defended_damage
+	damage_taken.emit(curr_health, MAX_HEALTH)
 	if curr_health <= 0.0:
 		died.emit()
 		return
-	damage_taken.emit(dmg_amount)
 
 
 func heal(health_amount: float) -> void:

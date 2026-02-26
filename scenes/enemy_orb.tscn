@@ -38,9 +38,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98941, -1.24849)
 [node name="HealthComponent" type="Node" parent="." unique_id=271317413 node_paths=PackedStringArray("HURTBOX", "INVINSIBILITY_TIMER")]
 script = ExtResource("3_5e40v")
 HURTBOX = NodePath("../HurtBox")
-INVINSIBILITY_TIMER = NodePath("InvisinsibilityTimer")
+INVINSIBILITY_TIMER = NodePath("InvinsibilityTimer")
 
-[node name="InvisinsibilityTimer" type="Timer" parent="HealthComponent" unique_id=197455136]
+[node name="InvinsibilityTimer" type="Timer" parent="HealthComponent" unique_id=197455136]
 wait_time = 0.1
 one_shot = true
 

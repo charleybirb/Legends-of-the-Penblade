@@ -6,6 +6,10 @@
 [ext_resource type="Script" uid="uid://1jvv6e25xb7x" path="res://scripts/gui.gd" id="3_7rqsa"]
 [ext_resource type="PackedScene" uid="uid://bx0tnf4mos5bh" path="res://prototyping/prototype_scenes/prototype_level.tscn" id="3_xhbfp"]
 [ext_resource type="PackedScene" uid="uid://ce0rbhsjqoww1" path="res://scenes/ui/action_menu.tscn" id="5_1ysoe"]
+[ext_resource type="Texture2D" uid="uid://g0f310xrxka4" path="res://assets/images/health-bg.png" id="5_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://b1x8igytpuayc" path="res://assets/images/health-border.png" id="6_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://q5ywvfaesgeh" path="res://assets/images/health-green.png" id="7_trceg"]
+[ext_resource type="Script" uid="uid://dnosty4edt175" path="res://scripts/ui/target_health.gd" id="8_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://ux0koyxcr71a" path="res://assets/images/jaret_portrait.png" id="10_8nf4x"]
 [ext_resource type="Script" uid="uid://bo545tmb6cxkt" path="res://scripts/ui/time_manager.gd" id="11_yhb4o"]
 
@@ -40,6 +44,23 @@ script = ExtResource("1_w54pl")
 process_mode = 3
 script = ExtResource("3_7rqsa")
 PORTRAIT = NodePath("Portrait")
+
+[node name="TargetHealth" type="TextureProgressBar" parent="GUI" unique_id=1819406196]
+texture_filter = 1
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 51.0
+offset_bottom = 25.0
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("5_ya4ey")
+texture_over = ExtResource("6_eb6dy")
+texture_progress = ExtResource("7_trceg")
+script = ExtResource("8_eb6dy")
 
 [node name="ActionMenu" parent="GUI" unique_id=241844666 instance=ExtResource("5_1ysoe")]
 
