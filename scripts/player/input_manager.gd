@@ -8,7 +8,7 @@ func gather_input() -> InputPackage:
 	check_action(&"secondary_action")
 	check_action(&"primary_action")
 	check_action(&"jump")
-	check_action_modifier(&"walk")
+	#check_action_modifier(&"walk")
 	
 	new_input.input_direction = Input.get_vector(
 		&"move_left", &"move_right", 
