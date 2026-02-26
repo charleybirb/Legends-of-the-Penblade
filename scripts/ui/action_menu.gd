@@ -13,6 +13,6 @@ extends PanelContainer
 
 func change_menu_mode() -> void:
 	theme = BATTLE_THEME if Global.is_in_battle else NORMAL_THEME
-	var title_panel_stylebox = TITLE_PANEL_BATTLE_STYLEBOX if Global.is_in_battle else TITLE_PANEL_NORMAL_STYLEBOX
+	var title_panel_stylebox : StyleBox = TITLE_PANEL_BATTLE_STYLEBOX if Global.is_in_battle else TITLE_PANEL_NORMAL_STYLEBOX
 	TITLE_PANEL.remove_theme_stylebox_override("panel")
 	TITLE_PANEL.add_theme_stylebox_override("panel", title_panel_stylebox)

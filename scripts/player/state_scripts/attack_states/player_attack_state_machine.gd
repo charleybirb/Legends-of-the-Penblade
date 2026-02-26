@@ -42,11 +42,11 @@ func start_attack() -> void:
 	attack_index += 1
 	if attack_index > ATTACK_STATES.size():
 		attack_index = 1
-	Global.debug.update_label("AttackState", "Attack" + str(attack_index))
+	SignalBus.debug_updated.emit("AttackState", "Attack" + str(attack_index))
 	current_attack_state = ATTACK_STATES[attack_index-1]
 	current_attack_state.enter()
 
 
 func end_attack() -> void:
-	Global.debug.remove_label("AttackState")
+	SignalBus.debug_removed.emit("AttackState")
 	current_attack_state.exit()

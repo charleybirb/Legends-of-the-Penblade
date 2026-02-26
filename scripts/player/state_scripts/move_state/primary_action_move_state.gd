@@ -7,11 +7,16 @@ const QUEUE_BUFFER_TIME := 0.3
 
 var is_action_queued := false
 var is_action_ongoing := false
+var is_action_cancelled := false
 var action_start_time := 0.0
 var queue_start_time := 0.0
 var max_queue_time := 0.6
 
+
 func check_relevance(input: InputPackage) -> StringName:
+	if is_action_cancelled:
+		is_action_cancelled = false
+		return &"idle"
 	if !is_action_ongoing:
 		if !is_action_queued:
 			input.actions.sort_custom(move_state_priority_sort)
@@ -23,11 +28,24 @@ func check_relevance(input: InputPackage) -> StringName:
 		return &"okay"
 
 
+func _ready() -> void:
+	SignalBus.primary_action_committed.connect(commit_action)
+	SignalBus.primary_action_blocked.connect(cancel_action)
+
+
 func enter(_previous_move_state: MoveState) -> void:
-	action_start_time = get_time()
-	if Global.action_menu_manager.menu_index == 1:
+	SignalBus.primary_action_attempted.emit()
+
+
+func cancel_action() -> void:
+	is_action_cancelled = true
+
+
+func commit_action(action_name: StringName) -> void:
+	action_start_time = curr_time()
+	is_action_ongoing = true
+	if action_name.begins_with("attack"):
 		ATTACK_STATE_MACHINE.start_attack()
-		is_action_ongoing = true
 		max_queue_time = ANIMATION_PLAYER.current_animation_length
 		
 
@@ -35,7 +53,7 @@ func enter(_previous_move_state: MoveState) -> void:
 func update(input: InputPackage, _delta: float) -> void:
 	if &"primary_action" in input.actions and get_action_time() >= QUEUE_BUFFER_TIME:
 		is_action_queued = true
-		queue_start_time = get_time()
+		queue_start_time = curr_time()
 	if is_action_queued and get_queue_time() >= max_queue_time:
 		is_action_queued = false
 
@@ -50,12 +68,12 @@ func exit() -> void:
 	ATTACK_STATE_MACHINE.attack_index = 0
 
 
-func get_time() -> float:
+func curr_time() -> float:
 	return Time.get_unix_time_from_system()
 
 
 func get_action_time() -> float:
-	return get_time() - action_start_time
+	return curr_time() - action_start_time
 
 
 func get_queue_time() -> float:

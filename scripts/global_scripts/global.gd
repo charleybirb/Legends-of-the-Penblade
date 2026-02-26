@@ -1,6 +1,6 @@
 extends Node
 
-var action_menu_manager : ActionMenuManager
+
 var level_manager : LevelManager
 var debug : DebugPanel
 

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v6fa41ykf2vf"
-path.s3tc="res://.godot/imported/texture_09.png-c7b3d2a93bc066ea2f78435afc4c0e76.s3tc.ctex"
+uid="uid://7h0yc2gk1v7c"
+path.s3tc="res://.godot/imported/fountain_gradients.png-2e4ec5e6fe570c0467201838742381f5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "464925137064a6347408563144442a26"
+}
 
 [deps]
 
-source_file="res://prototyping/prototype_textures/red/texture_09.png"
-dest_files=["res://.godot/imported/texture_09.png-c7b3d2a93bc066ea2f78435afc4c0e76.s3tc.ctex"]
+source_file="res://assets/models/fountain_gradients.png"
+dest_files=["res://.godot/imported/fountain_gradients.png-2e4ec5e6fe570c0467201838742381f5.s3tc.ctex"]
 
 [params]
 

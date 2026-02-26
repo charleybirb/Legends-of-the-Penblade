@@ -5,7 +5,7 @@ var parent : Control
 func _ready() -> void:
 	parent = get_parent()
 	await get_tree().create_timer(0.03).timeout
-	var original_modulate = parent.modulate
+	var original_modulate : Color = parent.modulate
 	parent.modulate = Color(1,1,1,0)
 	parent.position.x -= parent.size.x + 100
 	var tween := get_tree().create_tween()

@@ -33,7 +33,7 @@ var yaw : float = DEFAULT_YAW
 var pitch : float = DEFAULT_PITCH
 var height : float = DEFAULT_HEIGHT
 var pitch_direction : int = 1
-var lock_on_target
+var lock_on_target : Node3D
 var is_using_mouse : bool = true
 var sensitivity_multiplier : float = 11.0
 
@@ -47,7 +47,7 @@ func _input(event: InputEvent) -> void:
 	if not (Global.is_mouse_captured and event is InputEventMouseMotion): 
 		return
 	yaw += -event.relative.x * Global.h_sensitivity
-	var last_pitch = pitch
+	var last_pitch : float = pitch
 	pitch = clamp((pitch + -event.relative.y * Global.v_sensitivity),
 		MIN_PITCH,
 		MAX_PITCH)
@@ -121,7 +121,7 @@ func rotate_pitch(delta: float) -> void:
 		PITCH_ACCELERATION * delta)
 
 
-func follow_target(delta: float):
+func follow_target(delta: float) -> void:
 	var target_position : Vector3 = TARGET.global_position if !lock_on_target else \
 		(lock_on_target.global_position + TARGET.global_position) / 2
 	global_position.x = lerp(global_position.x, target_position.x, FOLLOW_SPEED * delta)
@@ -129,7 +129,7 @@ func follow_target(delta: float):
 	global_position.y = lerp(global_position.y, target_position.y, FOLLOW_SPEED * 0.8 * delta)
 					   
 
-func lock_on(new_target) -> void:
+func lock_on(new_target: Node3D) -> void:
 	lock_on_target = new_target
 
 func lock_off() -> void:

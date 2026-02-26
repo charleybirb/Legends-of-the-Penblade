@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bx0tnf4mos5bh"]
 
 [ext_resource type="PackedScene" uid="uid://38cpuckweh1l" path="res://scenes/player.tscn" id="1_og3mw"]
-[ext_resource type="Material" uid="uid://dv1d1x1yjbfil" path="res://prototyping/prototype_materials/black.tres" id="2_v1beu"]
 [ext_resource type="Material" uid="uid://bdtl0xcvfn3gq" path="res://prototyping/prototype_materials/orange.tres" id="3_0hslt"]
+[ext_resource type="PackedScene" uid="uid://dt7bfwhawmfqf" path="res://assets/models/fountain.glb" id="3_87nvg"]
+[ext_resource type="Texture2D" uid="uid://cebc7mt8bl2qn" path="res://prototyping/prototype_textures/dark/texture_03.png" id="3_s5g68"]
 [ext_resource type="PackedScene" uid="uid://b8ts6xd75p5n4" path="res://scenes/enemy_orb.tscn" id="4_cvno0"]
 
 [sub_resource type="Environment" id="Environment_ek0ic"]
@@ -38,8 +39,13 @@ volumetric_fog_detail_spread = 6.0
 volumetric_fog_sky_affect = 0.0
 volumetric_fog_temporal_reprojection_enabled = false
 
-[sub_resource type="BoxMesh" id="BoxMesh_0hslt"]
-material = ExtResource("2_v1beu")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87nvg"]
+shading_mode = 0
+albedo_texture = ExtResource("3_s5g68")
+uv1_scale = Vector3(100, 60, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5acdt"]
+material = SubResource("StandardMaterial3D_87nvg")
 size = Vector3(100, 0.4, 100)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cvno0"]
@@ -62,13 +68,16 @@ environment = SubResource("Environment_ek0ic")
 
 [node name="StaticBodies" type="Node3D" parent="." unique_id=659418239]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="StaticBodies" unique_id=545186680]
+[node name="StaticBody3D25" type="StaticBody3D" parent="StaticBodies" unique_id=1548321934]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBodies/StaticBody3D" unique_id=1535307090]
-mesh = SubResource("BoxMesh_0hslt")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBodies/StaticBody3D25" unique_id=497923179]
+mesh = SubResource("BoxMesh_5acdt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBodies/StaticBody3D" unique_id=1848818017]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBodies/StaticBody3D25" unique_id=2038940930]
 shape = SubResource("ConcavePolygonShape3D_cvno0")
+
+[node name="fountain" parent="StaticBodies/StaticBody3D25" unique_id=705271091 instance=ExtResource("3_87nvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.19999999, -25)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="StaticBodies" unique_id=2002157287]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.7, 0)

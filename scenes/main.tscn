@@ -6,9 +6,7 @@
 [ext_resource type="Script" uid="uid://1jvv6e25xb7x" path="res://scripts/gui.gd" id="3_7rqsa"]
 [ext_resource type="PackedScene" uid="uid://bx0tnf4mos5bh" path="res://prototyping/prototype_scenes/prototype_level.tscn" id="3_xhbfp"]
 [ext_resource type="Script" uid="uid://bmyobk3mkbr1i" path="res://scripts/action_menu_manager.gd" id="4_e6jmp"]
-[ext_resource type="StyleBox" uid="uid://n8x78il7dvkg" path="res://assets/themes/style_boxes/command_active_stylebox.tres" id="4_qg0n6"]
 [ext_resource type="PackedScene" uid="uid://ce0rbhsjqoww1" path="res://scenes/ui/action_menu.tscn" id="5_1ysoe"]
-[ext_resource type="StyleBox" uid="uid://doj3c5yjfsetr" path="res://assets/themes/style_boxes/battle_active_button.tres" id="6_l70qt"]
 [ext_resource type="Texture2D" uid="uid://ux0koyxcr71a" path="res://assets/images/jaret_portrait.png" id="10_8nf4x"]
 [ext_resource type="Script" uid="uid://bo545tmb6cxkt" path="res://scripts/ui/time_manager.gd" id="11_yhb4o"]
 
@@ -45,13 +43,9 @@ script = ExtResource("3_7rqsa")
 PORTRAIT = NodePath("Portrait")
 
 [node name="ActionMenu" parent="GUI" unique_id=241844666 instance=ExtResource("5_1ysoe")]
-visible = false
 
-[node name="ActionMenuManager" type="Node" parent="GUI/ActionMenu" unique_id=1507226760 node_paths=PackedStringArray("ACTION_MENU")]
+[node name="ActionMenuManager" type="Node" parent="GUI/ActionMenu" unique_id=1507226760]
 script = ExtResource("4_e6jmp")
-ACTION_MENU = NodePath("..")
-ACTIVE_NORMAL_BUTTON_STYLEBOX = ExtResource("4_qg0n6")
-ACTIVE_BATTLE_BUTTON_STYLEBOX = ExtResource("6_l70qt")
 
 [node name="DebugPanel" parent="GUI" unique_id=1328058587 instance=ExtResource("2_qsy5b")]
 visible = false

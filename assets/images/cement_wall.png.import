@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v6fa41ykf2vf"
-path.s3tc="res://.godot/imported/texture_09.png-c7b3d2a93bc066ea2f78435afc4c0e76.s3tc.ctex"
+uid="uid://ll3g525tdohk"
+path="res://.godot/imported/cement_wall.png-04055f773c01cbde1792ec7201e819c9.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://prototyping/prototype_textures/red/texture_09.png"
-dest_files=["res://.godot/imported/texture_09.png-c7b3d2a93bc066ea2f78435afc4c0e76.s3tc.ctex"]
+source_file="res://assets/images/cement_wall.png"
+dest_files=["res://.godot/imported/cement_wall.png-04055f773c01cbde1792ec7201e819c9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -16,6 +16,7 @@ var targets_hit : Array[Node3D]
 
 
 func enter() -> void:
+	#Turn the hitbox collision on
 	HITBOX.set_collision_layer_value(4, true)
 	apply_strength_multiplier()
 	play_animation(ANIM_NAME, 0.1)
@@ -23,7 +24,8 @@ func enter() -> void:
 
 
 func exit() -> void:
-	Global.debug.remove_label("EnemyAttacked")
+	SignalBus.debug_removed.emit("EnemyAttacked")
+	#Turn the hitbox collision off
 	HITBOX.set_collision_layer_value(4, false)
 	targets_hit.clear()
 

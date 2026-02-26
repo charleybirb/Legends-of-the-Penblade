@@ -30,7 +30,7 @@ func enter(_previous_move_state: MoveState) -> void:
 	queued_action = &""
 
 
-func update(input: InputPackage, _delta) -> void:
+func update(input: InputPackage, _delta: float) -> void:
 	input.actions.sort_custom(move_state_priority_sort)
 	if input.actions[0] != &"idle":
 		queued_action = input.actions[0]

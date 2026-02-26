@@ -45,7 +45,7 @@ func physics_update(input: InputPackage, delta: float) -> void:
 		if !is_apex_reached:
 			time_apex_reached = curr_time
 		is_apex_reached = true
-	var speed = SPEED if !is_apex_reached else SPEED / 2
+	var speed : float = SPEED if !is_apex_reached else SPEED / 2.0
 	if input.input_direction != Vector2.ZERO:
 		VELOCITY_COMPONENT.update_rotation(ROTATION_SPEED, delta)
 	VELOCITY_COMPONENT.update_velocity(input, speed, ACCELERATION, delta)

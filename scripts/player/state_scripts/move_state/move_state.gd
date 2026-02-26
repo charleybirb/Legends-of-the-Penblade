@@ -38,7 +38,7 @@ func mark_enter_state() -> void:
 
 
 func get_progress() -> float:
-	var now = Time.get_unix_time_from_system()
+	var now : float = Time.get_unix_time_from_system()
 	return now - enter_state_time
 
 

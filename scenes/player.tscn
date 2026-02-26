@@ -2904,7 +2904,7 @@ script = ExtResource("21_gmjgq")
 DETECT_AREA = NodePath("../DetectArea")
 CAMERA_CONTROLLER = NodePath("../CameraController")
 
-[node name="SFXManager" type="Node" parent="." unique_id=53631587 node_paths=PackedStringArray("SFX_NODES")]
+[node name="SFXManager" type="Node3D" parent="." unique_id=55747239 node_paths=PackedStringArray("SFX_NODES")]
 script = ExtResource("25_ke2ow")
 SFX_NODES = [NodePath("SFX1"), NodePath("SFX2")]
 SOUNDS = Dictionary[StringName, String]({

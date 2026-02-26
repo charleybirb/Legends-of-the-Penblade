@@ -4,7 +4,7 @@ var parent : Control
 
 func _ready() -> void:
 	parent = get_parent()
-	var original_modulate = parent.modulate
+	var original_modulate : Color = parent.modulate
 	parent.modulate = Color(1,1,1,0)
 	await get_tree().create_timer(0.05).timeout
 	var origin_position := parent.position

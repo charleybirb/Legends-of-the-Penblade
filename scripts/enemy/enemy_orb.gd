@@ -19,15 +19,15 @@ var defense := 1
 var player : CharacterBody3D
 
 
-func _on_body_detected(body: Node3D):
-	if body.name != "Player":
+func _on_body_detected(body: Node3D) -> void:
+	if body.name != &"Player":
 		return
 	player = body
 	print("player detected")
 	#ANIMATION_PLAYER.play("walk", 0.3, 2.0)
 	
 
-func _on_body_undetected(body: Node3D):
+func _on_body_undetected(body: Node3D) -> void:
 	if body.name != &"Player":
 		return
 	player = null

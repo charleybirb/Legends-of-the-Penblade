@@ -5,7 +5,8 @@ extends PanelContainer
 var debug_labels := {}
 
 func _ready() -> void:
-	Global.debug = self
+	SignalBus.debug_updated.connect(update_label)
+	SignalBus.debug_removed.connect(remove_label)
 	#DisplayServer.window_set_position(DisplayServer.screen_get_size() / 4)
 
 

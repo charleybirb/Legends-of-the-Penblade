@@ -4,7 +4,7 @@ extends MoveState
 const DECELERATION := 35.0
 const MIN_LAND_TIME := 0.2
 
-var is_landed = false
+var is_landed : bool = false
 
 func check_relevance(input: InputPackage) -> StringName:
 	if works_longer_than(MIN_LAND_TIME):
