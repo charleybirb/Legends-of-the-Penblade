@@ -14,7 +14,7 @@ const WEIGHT := 1.0
 @export var FOCUS_POINT : Marker3D
 @export var HEALTH_COMPONENT : HealthComponent
 
-var health := 10
+var is_target : bool = false
 var defense := 1
 var ep : int = 1
 var player : CharacterBody3D
@@ -40,6 +40,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if is_target: 
+		is_target = false
+		update_healthbar(HEALTH_COMPONENT.curr_health, HEALTH_COMPONENT.MAX_HEALTH)
 	if player:
 		var to_player := player.global_transform.origin - global_transform.origin
 		var distance := to_player.length()
@@ -61,7 +64,7 @@ func knockback(knockback_strength: float, direction: Vector3) ->  void:
 	velocity = knockback_strength * direction
 
 
-func update_healthbar(curr_health: int, max_health: int) -> void:
+func update_healthbar(curr_health: float, max_health: float) -> void:
 	SignalBus.enemy_health_changed.emit(curr_health, max_health)
 
 

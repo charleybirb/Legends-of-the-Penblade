@@ -1,6 +1,6 @@
 extends Node
 
-enum Track { DEFENDER, WIZARD, BRUTE }
+enum Track { DEFENDER, MAGE, STRIDER, NONE }
 
 var strength : int = 3
 var defense : int = 1

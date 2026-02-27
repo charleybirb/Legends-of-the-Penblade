@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bemt3t80loq0a" path="res://scripts/player/shadow_ray.gd" id="2_kg6dj"]
 [ext_resource type="Script" uid="uid://cvd4yvdkfpkxm" path="res://scripts/player/camera_controller.gd" id="2_ngoov"]
 [ext_resource type="Texture2D" uid="uid://ksk1bg2wgkgg" path="res://assets/models/jaret/jaret_full_jaret-neutral.jpg" id="3_hqd5d"]
+[ext_resource type="Script" uid="uid://258kfswwau0b" path="res://scripts/player/detect_ray.gd" id="3_ujl30"]
 [ext_resource type="PackedScene" uid="uid://bng2ogfgkysgy" path="res://scenes/penblade.tscn" id="4_v7l4v"]
 [ext_resource type="Script" uid="uid://m6763u02xey2" path="res://scripts/player/input_manager.gd" id="4_xcp3r"]
 [ext_resource type="Script" uid="uid://b0m1etjuit8yl" path="res://scripts/player/state_scripts/move_state/player_move_state_machine.gd" id="5_5bmdo"]
@@ -23,7 +24,7 @@
 [ext_resource type="Script" uid="uid://cy8tuvn0d8ymk" path="res://scripts/player/state_scripts/attack_states/attack_2.gd" id="16_rfvdv"]
 [ext_resource type="Script" uid="uid://cy0apx2pruyr5" path="res://scripts/player/state_scripts/attack_states/attack_3.gd" id="17_kbsc1"]
 [ext_resource type="Script" uid="uid://dmgdyj2hobfh3" path="res://scripts/player/battle_manager.gd" id="21_gmjgq"]
-[ext_resource type="Texture2D" uid="uid://cytmbqvj4yuwt" path="res://assets/images/shadow.png" id="23_e2lt2"]
+[ext_resource type="Texture2D" uid="uid://cytmbqvj4yuwt" path="res://assets/textures/shadow.png" id="23_e2lt2"]
 [ext_resource type="Script" uid="uid://bxng2tqqu25my" path="res://scripts/sfx_manager.gd" id="25_ke2ow"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sk26b"]
@@ -2522,6 +2523,12 @@ shape = SubResource("CapsuleShape3D_sk26b")
 target_position = Vector3(0, -2, 0)
 script = ExtResource("2_kg6dj")
 SHADOW = NodePath("../Shadow")
+
+[node name="DetectRay" type="RayCast3D" parent="Model" unique_id=1758235085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0633404, 0)
+target_position = Vector3(0, 0, 6)
+collision_mask = 4
+script = ExtResource("3_ujl30")
 
 [node name="Shadow" type="Sprite3D" parent="Model" unique_id=1909349773]
 transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 1, 0, -0.8, -4.37114e-08, 0, 0.01, 0)

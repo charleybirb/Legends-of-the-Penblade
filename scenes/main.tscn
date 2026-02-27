@@ -6,15 +6,18 @@
 [ext_resource type="Script" uid="uid://1jvv6e25xb7x" path="res://scripts/gui.gd" id="3_7rqsa"]
 [ext_resource type="PackedScene" uid="uid://bx0tnf4mos5bh" path="res://prototyping/prototype_scenes/prototype_level.tscn" id="3_xhbfp"]
 [ext_resource type="PackedScene" uid="uid://ce0rbhsjqoww1" path="res://scenes/ui/action_menu.tscn" id="5_1ysoe"]
-[ext_resource type="Texture2D" uid="uid://g0f310xrxka4" path="res://assets/images/ui_textures/health-bg.png" id="5_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://b1x8igytpuayc" path="res://assets/images/ui_textures/health-border.png" id="6_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://q5ywvfaesgeh" path="res://assets/images/ui_textures/health-green.png" id="7_trceg"]
+[ext_resource type="Texture2D" uid="uid://g0f310xrxka4" path="res://assets/textures/ui_textures/health-bg.png" id="5_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://b1x8igytpuayc" path="res://assets/textures/ui_textures/health-border.png" id="6_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://q5ywvfaesgeh" path="res://assets/textures/ui_textures/health-green.png" id="7_trceg"]
 [ext_resource type="Script" uid="uid://dnosty4edt175" path="res://scripts/ui/target_health.gd" id="8_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://ux0koyxcr71a" path="res://assets/images/ui_textures/jaret_portrait.png" id="10_8nf4x"]
+[ext_resource type="Texture2D" uid="uid://cldixl5pj1n4g" path="res://assets/textures/ui_textures/weakness-rock.png" id="9_trceg"]
+[ext_resource type="Texture2D" uid="uid://ux0koyxcr71a" path="res://assets/textures/ui_textures/jaret_portrait.png" id="10_8nf4x"]
 [ext_resource type="Script" uid="uid://bo545tmb6cxkt" path="res://scripts/ui/time_manager.gd" id="11_yhb4o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_trceg"]
 shader = ExtResource("2_eb6dy")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb6dy"]
 
 [node name="Main" type="Control" unique_id=1575740282]
 layout_mode = 3
@@ -45,13 +48,24 @@ process_mode = 3
 script = ExtResource("3_7rqsa")
 PORTRAIT = NodePath("Portrait")
 
-[node name="TargetHealthBar" type="TextureProgressBar" parent="GUI" unique_id=1819406196]
+[node name="EnemyStatsPanel" type="PanelContainer" parent="GUI" unique_id=1666373885]
 texture_filter = 1
-offset_left = 17.0
-offset_top = 17.0
-offset_right = 51.0
-offset_bottom = 25.0
-value = 100.0
+offset_right = 255.0
+offset_bottom = 34.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eb6dy")
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/EnemyStatsPanel" unique_id=1738653547]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/EnemyStatsPanel/MarginContainer" unique_id=1312002373]
+layout_mode = 2
+
+[node name="TargetHealthBar" type="TextureProgressBar" parent="GUI/EnemyStatsPanel/MarginContainer/HBoxContainer" unique_id=1819406196]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
 nine_patch_stretch = true
 stretch_margin_left = 2
 stretch_margin_top = 2
@@ -61,6 +75,12 @@ texture_under = ExtResource("5_ya4ey")
 texture_over = ExtResource("6_eb6dy")
 texture_progress = ExtResource("7_trceg")
 script = ExtResource("8_eb6dy")
+
+[node name="WeaknessIndicator" type="TextureRect" parent="GUI/EnemyStatsPanel/MarginContainer/HBoxContainer" unique_id=968441970]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_trceg")
+stretch_mode = 2
 
 [node name="ActionMenu" parent="GUI" unique_id=241844666 instance=ExtResource("5_1ysoe")]
 

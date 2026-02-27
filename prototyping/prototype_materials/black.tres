@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dv1d1x1yjbfil"]
 
-[ext_resource type="Texture2D" uid="uid://g5oih1m7e4qw" path="res://assets/images/prototype_textures/dark/texture_01.png" id="1_ag6jj"]
+[ext_resource type="Texture2D" uid="uid://g5oih1m7e4qw" path="res://assets/textures/prototype_textures/dark/texture_01.png" id="1_ag6jj"]
 
 [resource]
 shading_mode = 0

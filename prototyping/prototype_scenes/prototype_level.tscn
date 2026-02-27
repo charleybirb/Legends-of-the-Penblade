@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://38cpuckweh1l" path="res://scenes/player.tscn" id="1_og3mw"]
 [ext_resource type="Material" uid="uid://bdtl0xcvfn3gq" path="res://prototyping/prototype_materials/orange.tres" id="3_0hslt"]
 [ext_resource type="PackedScene" uid="uid://dt7bfwhawmfqf" path="res://assets/models/fountain.glb" id="3_87nvg"]
-[ext_resource type="Texture2D" uid="uid://cebc7mt8bl2qn" path="res://assets/images/prototype_textures/dark/texture_03.png" id="3_s5g68"]
+[ext_resource type="Texture2D" uid="uid://cebc7mt8bl2qn" path="res://assets/textures/prototype_textures/dark/texture_03.png" id="3_s5g68"]
 [ext_resource type="PackedScene" uid="uid://b8ts6xd75p5n4" path="res://scenes/flower_folly.tscn" id="4_cvno0"]
 
 [sub_resource type="Environment" id="Environment_ek0ic"]
