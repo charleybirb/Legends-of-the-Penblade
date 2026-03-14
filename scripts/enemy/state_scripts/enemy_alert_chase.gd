@@ -1,0 +1,2 @@
+extends EnemyAlertState
+class_name EnemyAlertChase

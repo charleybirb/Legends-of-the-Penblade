@@ -10,9 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://b1x8igytpuayc" path="res://assets/textures/ui_textures/health-border.png" id="6_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://q5ywvfaesgeh" path="res://assets/textures/ui_textures/health-green.png" id="7_trceg"]
 [ext_resource type="Script" uid="uid://dnosty4edt175" path="res://scripts/ui/target_health.gd" id="8_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://bp02ysdxdnkye" path="res://assets/textures/ui_textures/weakness-water.png" id="9_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://cldixl5pj1n4g" path="res://assets/textures/ui_textures/weakness-rock.png" id="9_trceg"]
 [ext_resource type="Texture2D" uid="uid://ux0koyxcr71a" path="res://assets/textures/ui_textures/jaret_portrait.png" id="10_8nf4x"]
+[ext_resource type="Texture2D" uid="uid://c5ajnyh5k0pgy" path="res://assets/textures/ui_textures/weakness-air.png" id="11_jbj1t"]
 [ext_resource type="Script" uid="uid://bo545tmb6cxkt" path="res://scripts/ui/time_manager.gd" id="11_yhb4o"]
+[ext_resource type="Script" uid="uid://uuevs6i2a2ha" path="res://scripts/ui/exp_label.gd" id="12_jbj1t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_trceg"]
 shader = ExtResource("2_eb6dy")
@@ -50,7 +53,7 @@ PORTRAIT = NodePath("Portrait")
 
 [node name="EnemyStatsPanel" type="PanelContainer" parent="GUI" unique_id=1666373885]
 texture_filter = 1
-offset_right = 255.0
+offset_right = 169.0
 offset_bottom = 34.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_eb6dy")
 
@@ -66,6 +69,7 @@ layout_mode = 2
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
 nine_patch_stretch = true
 stretch_margin_left = 2
 stretch_margin_top = 2
@@ -76,11 +80,39 @@ texture_over = ExtResource("6_eb6dy")
 texture_progress = ExtResource("7_trceg")
 script = ExtResource("8_eb6dy")
 
-[node name="WeaknessIndicator" type="TextureRect" parent="GUI/EnemyStatsPanel/MarginContainer/HBoxContainer" unique_id=968441970]
+[node name="NullifyIndicator" type="TextureRect" parent="GUI/EnemyStatsPanel/MarginContainer/HBoxContainer" unique_id=968441970]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_jkv2x")
+stretch_mode = 2
+
+[node name="WeaknessIndicator2" type="TextureRect" parent="GUI/EnemyStatsPanel/MarginContainer/HBoxContainer" unique_id=382126920]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("9_trceg")
 stretch_mode = 2
+
+[node name="HealIndicator" type="TextureRect" parent="GUI/EnemyStatsPanel/MarginContainer/HBoxContainer" unique_id=377234570]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("11_jbj1t")
+stretch_mode = 2
+
+[node name="XpLabel" type="RichTextLabel" parent="GUI" unique_id=204932198 node_paths=PackedStringArray("timer")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -369.0
+offset_top = 12.0
+offset_right = -11.0
+offset_bottom = 52.0
+grow_horizontal = 0
+horizontal_alignment = 2
+script = ExtResource("12_jbj1t")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="GUI/XpLabel" unique_id=1698054674]
+one_shot = true
 
 [node name="ActionMenu" parent="GUI" unique_id=241844666 instance=ExtResource("5_1ysoe")]
 

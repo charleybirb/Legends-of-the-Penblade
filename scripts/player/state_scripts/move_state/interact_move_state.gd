@@ -1,4 +1,4 @@
-extends MoveState
+extends PlayerMoveState
 
 const DECELERATION = 15.0
 
@@ -21,7 +21,7 @@ func check_relevance(input: InputPackage) -> StringName:
 		return &"okay"
 
 
-func enter(_previous_move_state: MoveState) -> void:
+func enter(_previous_move_state: PlayerMoveState) -> void:
 	queued_action = &""
 	is_interacting = true
 	play_animation(&"interact", 0.3, 1.0)

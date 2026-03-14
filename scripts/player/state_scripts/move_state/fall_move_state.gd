@@ -1,4 +1,4 @@
-extends MoveState
+extends PlayerMoveState
 
 const GRAVITY := 9.8
 const ROTATION_SPEED := 6.0
@@ -20,7 +20,7 @@ func check_relevance(_input: InputPackage) -> StringName:
 	return &"okay"
 
 
-func enter(_previous_move_state: MoveState) -> void:
+func enter(_previous_move_state: PlayerMoveState) -> void:
 	VELOCITY_COMPONENT.fall()
 	play_animation(&"fall", 0.1)
 	#LEDGE_RAY.enabled = true

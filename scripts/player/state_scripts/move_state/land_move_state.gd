@@ -1,5 +1,5 @@
 class_name LandMoveState
-extends MoveState
+extends PlayerMoveState
 
 const DECELERATION := 35.0
 const MIN_LAND_TIME := 0.2
@@ -18,7 +18,7 @@ func check_relevance(input: InputPackage) -> StringName:
 		return &"okay"
 
 
-func enter(_previous_move_state: MoveState) -> void:
+func enter(_previous_move_state: PlayerMoveState) -> void:
 	if VELOCITY_COMPONENT.velocity.y == VELOCITY_COMPONENT.MAX_FALL_VELOCITY:
 		play_animation(&"land")
 	else:

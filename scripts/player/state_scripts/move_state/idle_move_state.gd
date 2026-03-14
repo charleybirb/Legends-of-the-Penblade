@@ -1,4 +1,4 @@
-extends MoveState
+extends PlayerMoveState
 
 const DECELERATION := 45.0
 const ROTATION_SPEED := 6.0
@@ -19,7 +19,7 @@ func check_relevance(input: InputPackage) -> StringName:
 	return &"okay"
 
 
-func enter(previous_move_state: MoveState) -> void:
+func enter(previous_move_state: PlayerMoveState) -> void:
 	play_animation(&"idle", 0.3)
 	if previous_move_state is RunMoveState: is_rotated = false
 

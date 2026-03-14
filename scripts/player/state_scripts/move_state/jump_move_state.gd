@@ -1,4 +1,4 @@
-extends MoveState
+extends PlayerMoveState
 
 const JUMP_HEIGHT := 1.65
 const APEX_DURATION := 0.44 #time it takes to reach the height of the jump
@@ -20,7 +20,7 @@ func check_relevance(_input: InputPackage) -> StringName:
 	return &"okay"
 
 
-func enter(_previous_move_state: MoveState) -> void:
+func enter(_previous_move_state: PlayerMoveState) -> void:
 	VELOCITY_COMPONENT.jump(JUMP_HEIGHT, APEX_DURATION)
 	play_animation(&"jump", -1)
 

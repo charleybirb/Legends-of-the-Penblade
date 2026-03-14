@@ -1,4 +1,4 @@
-class_name MoveState
+class_name PlayerMoveState
 extends Node
 
 @export var CAMERA : Camera3D
@@ -61,7 +61,7 @@ func works_during(start_time: float, finish_time: float) -> bool:
 	return false
 
 
-func enter(_previous_move_state: MoveState) -> void:
+func enter(_previous_move_state: PlayerMoveState) -> void:
 	pass
 
 func update(_input: InputPackage, _delta: float) -> void:

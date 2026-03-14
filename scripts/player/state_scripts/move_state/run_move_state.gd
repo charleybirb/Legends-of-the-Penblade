@@ -1,5 +1,5 @@
 class_name RunMoveState
-extends MoveState
+extends PlayerMoveState
 
 const RUN_SPEED := 5.2
 const WALK_SPEED := 2.8
@@ -21,7 +21,7 @@ func check_relevance(input: InputPackage) -> StringName:
 		return &"okay"
 
 
-func enter(_previous_move_state: MoveState) -> void:
+func enter(_previous_move_state: PlayerMoveState) -> void:
 	play_animation(&"run", 0.3, 1.6)
 	speed = RUN_SPEED
 

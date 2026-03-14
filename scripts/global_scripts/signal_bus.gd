@@ -8,6 +8,11 @@ signal secondary_action_attempted
 signal secondary_action_committed(action_name: StringName)
 signal secondary_action_blocked
 
+
+#UI Signals?
+signal experience_gained(amount: int)
+
+
 #Debug Signals
 signal debug_updated(title: String, value: String)
 signal debug_removed(title: String)

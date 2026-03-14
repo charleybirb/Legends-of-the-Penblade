@@ -1,4 +1,4 @@
-extends MoveState
+extends PlayerMoveState
 
 const DECELERATION := 20.0
 const QUEUE_BUFFER_TIME := 0.3
@@ -33,7 +33,7 @@ func _ready() -> void:
 	SignalBus.primary_action_blocked.connect(cancel_action)
 
 
-func enter(_previous_move_state: MoveState) -> void:
+func enter(_previous_move_state: PlayerMoveState) -> void:
 	SignalBus.primary_action_attempted.emit()
 
 

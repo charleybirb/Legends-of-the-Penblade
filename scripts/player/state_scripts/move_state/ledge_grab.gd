@@ -1,4 +1,4 @@
-extends MoveState
+extends PlayerMoveState
 
 
 func check_relevance(input: InputPackage) -> StringName:
@@ -9,5 +9,5 @@ func check_relevance(input: InputPackage) -> StringName:
 	return &"okay"
  
 
-func enter(_previous_move_state: MoveState) -> void:
+func enter(_previous_move_state: PlayerMoveState) -> void:
 	VELOCITY_COMPONENT.velocity = Vector3.ZERO

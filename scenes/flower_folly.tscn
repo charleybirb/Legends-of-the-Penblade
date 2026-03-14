@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://b8ts6xd75p5n4"]
 
 [ext_resource type="Script" uid="uid://c3s1jndjhdbrc" path="res://scripts/enemy/enemy.gd" id="1_oenu1"]
-[ext_resource type="PackedScene" uid="uid://s1io4f0vay7k" path="res://assets/models/nature_creature_light.blend" id="2_kuoab"]
+[ext_resource type="PackedScene" uid="uid://c1p4x3kgwmwcb" path="res://assets/models/folly-plant.blend" id="2_oenu1"]
 [ext_resource type="Script" uid="uid://c3qkbtq104htq" path="res://scripts/component_scripts/health_component.gd" id="3_chgtg"]
+[ext_resource type="Script" uid="uid://bg4y63xuwvm76" path="res://scripts/enemy/state_scripts/enemy_state_machine.gd" id="4_chgtg"]
+[ext_resource type="Script" uid="uid://b2h4xuu4pvgj7" path="res://scripts/enemy/state_scripts/enemy_move_state_machine.gd" id="5_eeu4t"]
+[ext_resource type="Script" uid="uid://cgfkoikq3tvcv" path="res://scripts/enemy/state_scripts/enemy_idle.gd" id="6_eeu4t"]
+[ext_resource type="Script" uid="uid://bxjlsfs08rtfo" path="res://scripts/enemy/state_scripts/enemy_run.gd" id="7_7ro7b"]
+[ext_resource type="Script" uid="uid://jar4s1is7nkt" path="res://scripts/enemy/state_scripts/enemy_alert_state_machine.gd" id="7_eje32"]
+[ext_resource type="Script" uid="uid://cwg1x8jyokje7" path="res://scripts/enemy/state_scripts/enemy_alert_idle.gd" id="8_766fi"]
+[ext_resource type="Script" uid="uid://ncmua084eopm" path="res://scripts/enemy/state_scripts/enemy_alert_wake.gd" id="10_brvwf"]
+[ext_resource type="Script" uid="uid://p4bvdp3rwctm" path="res://scripts/enemy/state_scripts/enemy_alert_chase.gd" id="10_ox4ij"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0a6o"]
 radius = 0.2006836
@@ -14,19 +22,17 @@ radius = 0.37060547
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kdmxo"]
 height = 3.49258
-radius = 17.2415
+radius = 13.592285
 
-[node name="FlowerFolly" type="CharacterBody3D" unique_id=873657236 node_paths=PackedStringArray("HURTBOX", "DETECT_AREA", "FOCUS_POINT", "HEALTH_COMPONENT")]
+[node name="FlowerFolly" type="CharacterBody3D" unique_id=873657236 node_paths=PackedStringArray("HURTBOX", "DETECT_AREA", "FOCUS_POINT", "HEALTH_COMPONENT", "STATE_MACHINE")]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_oenu1")
 HURTBOX = NodePath("HurtBox")
 DETECT_AREA = NodePath("DetectArea")
 FOCUS_POINT = NodePath("FocusPoint")
 HEALTH_COMPONENT = NodePath("HealthComponent")
-
-[node name="nature_creature_light" parent="." unique_id=806552364 instance=ExtResource("2_kuoab")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+STATE_MACHINE = NodePath("StateMachine/MoveState")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=33070449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85047823, -0.0211002)
@@ -35,14 +41,27 @@ shape = SubResource("CapsuleShape3D_q0a6o")
 [node name="FocusPoint" type="Marker3D" parent="." unique_id=915918693]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98941, -1.24849)
 
-[node name="HealthComponent" type="Node" parent="." unique_id=271317413 node_paths=PackedStringArray("HURTBOX", "INVINSIBILITY_TIMER")]
-script = ExtResource("3_chgtg")
-HURTBOX = NodePath("../HurtBox")
-INVINSIBILITY_TIMER = NodePath("InvinsibilityTimer")
+[node name="folly-plant" parent="." unique_id=2109479058 instance=ExtResource("2_oenu1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="InvinsibilityTimer" type="Timer" parent="HealthComponent" unique_id=197455136]
-wait_time = 0.1
-one_shot = true
+[node name="Skeleton3D" parent="folly-plant/Armature" parent_id_path=PackedInt32Array(2109479058, 809042064) index="0" unique_id=341109317]
+bones/0/position = Vector3(4.426829e-16, 0.405018, -0.029767549)
+bones/0/rotation = Quaternion(-0.5999543, 0.029170007, -0.14581543, 0.7860927)
+bones/1/rotation = Quaternion(-0.39104062, 0.02946152, -0.01225598, 0.9198202)
+bones/2/rotation = Quaternion(0.19313794, -0.08012662, -0.014442742, 0.97778773)
+bones/3/rotation = Quaternion(0.7730788, 0.004545965, -0.0049852384, 0.6342742)
+bones/4/rotation = Quaternion(0.11705138, 0.003667803, 0.122660935, 0.98551506)
+bones/5/rotation = Quaternion(-0.104670495, 0.012529111, 0.024045385, 0.99413735)
+bones/6/position = Vector3(-3.4924597e-09, 0.40501803, -0.029767523)
+bones/6/rotation = Quaternion(0.6851068, 0.19305249, 0.6288369, -0.31292737)
+bones/7/rotation = Quaternion(-0.16672066, -0.13855197, -0.5982438, 0.7714351)
+bones/8/rotation = Quaternion(-0.15098126, -0.009757556, 0.5806351, 0.7999827)
+bones/9/rotation = Quaternion(0.36426762, 0.10166158, -0.34236717, 0.8600923)
+bones/10/position = Vector3(1.7462298e-08, 0.405018, -0.029767528)
+bones/10/rotation = Quaternion(0.6699323, -0.2387597, -0.61382306, -0.34264544)
+bones/11/rotation = Quaternion(-0.14701208, 0.22334848, 0.54845905, 0.79227245)
+bones/12/rotation = Quaternion(-0.31258792, 0.019657467, -0.4976901, 0.8088306)
+bones/13/rotation = Quaternion(0.32974535, -0.13789612, 0.25302204, 0.8990175)
 
 [node name="HurtBox" type="Area3D" parent="." unique_id=191227794]
 collision_layer = 0
@@ -60,13 +79,31 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64355, 0)
 shape = SubResource("CylinderShape3D_kdmxo")
 
-[node name="StateMachine" type="Node" parent="." unique_id=834016259]
+[node name="HealthComponent" type="Node" parent="." unique_id=271317413 node_paths=PackedStringArray("HURTBOX", "INVINSIBILITY_TIMER")]
+script = ExtResource("3_chgtg")
+HURTBOX = NodePath("../HurtBox")
+INVINSIBILITY_TIMER = NodePath("InvinsibilityTimer")
 
-[node name="MoveState" type="Node" parent="StateMachine" unique_id=760451732]
+[node name="InvinsibilityTimer" type="Timer" parent="HealthComponent" unique_id=197455136]
+wait_time = 0.1
+one_shot = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=834016259 node_paths=PackedStringArray("DETECT_AREA", "ALERT_STATE_MACHINE", "MOVE_STATE_MACHINE", "ANIMATION_PLAYER")]
+script = ExtResource("4_chgtg")
+DETECT_AREA = NodePath("../DetectArea")
+ALERT_STATE_MACHINE = NodePath("AlertState")
+MOVE_STATE_MACHINE = NodePath("MoveState")
+ANIMATION_PLAYER = NodePath("../folly-plant/AnimationPlayer")
+
+[node name="MoveState" type="Node" parent="StateMachine" unique_id=760451732 node_paths=PackedStringArray("ANIMATION_PLAYER")]
+script = ExtResource("5_eeu4t")
+ANIMATION_PLAYER = NodePath("../../folly-plant/AnimationPlayer")
 
 [node name="Idle" type="Node" parent="StateMachine/MoveState" unique_id=1247651758]
+script = ExtResource("6_eeu4t")
 
 [node name="Run" type="Node" parent="StateMachine/MoveState" unique_id=226641739]
+script = ExtResource("7_7ro7b")
 
 [node name="Jump" type="Node" parent="StateMachine/MoveState" unique_id=1583318337]
 
@@ -77,13 +114,21 @@ shape = SubResource("CylinderShape3D_kdmxo")
 [node name="Land" type="Node" parent="StateMachine/MoveState" unique_id=1105891343]
 
 [node name="AlertState" type="Node" parent="StateMachine" unique_id=881736722]
+script = ExtResource("7_eje32")
 
 [node name="Idle" type="Node" parent="StateMachine/AlertState" unique_id=482504917]
+script = ExtResource("8_766fi")
+
+[node name="Wake" type="Node" parent="StateMachine/AlertState" unique_id=1367422215]
+script = ExtResource("10_brvwf")
 
 [node name="Search" type="Node" parent="StateMachine/AlertState" unique_id=349168369]
 
 [node name="Chase" type="Node" parent="StateMachine/AlertState" unique_id=94451690]
+script = ExtResource("10_ox4ij")
 
 [node name="Attack" type="Node" parent="StateMachine/AlertState" unique_id=8989265]
 
 [node name="AttackState" type="Node" parent="StateMachine" unique_id=1047860826]
+
+[editable path="folly-plant"]
