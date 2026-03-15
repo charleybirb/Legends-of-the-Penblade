@@ -14,11 +14,10 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0a6o"]
 radius = 0.2006836
-height = 1.7203455
+height = 0.9133954
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_2plf8"]
-height = 1.57301
-radius = 0.37060547
+[sub_resource type="BoxShape3D" id="BoxShape3D_brvwf"]
+size = Vector3(0.70288086, 1, 1.4529114)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kdmxo"]
 height = 3.49258
@@ -35,7 +34,11 @@ HEALTH_COMPONENT = NodePath("HealthComponent")
 STATE_MACHINE = NodePath("StateMachine/MoveState")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=33070449]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85047823, -0.0211002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4470032, -0.07368267)
+shape = SubResource("CapsuleShape3D_q0a6o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=969616750]
+transform = Transform3D(1, 0, 0, 0, 0.17268555, 0.984977, 0, -0.984977, 0.17268555, -0.03077674, 0.6752158, -0.58603656)
 shape = SubResource("CapsuleShape3D_q0a6o")
 
 [node name="FocusPoint" type="Marker3D" parent="." unique_id=915918693]
@@ -45,31 +48,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98941, -1.24849)
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="folly-plant/Armature" parent_id_path=PackedInt32Array(2109479058, 809042064) index="0" unique_id=341109317]
-bones/0/position = Vector3(4.426829e-16, 0.405018, -0.029767549)
-bones/0/rotation = Quaternion(-0.5999543, 0.029170007, -0.14581543, 0.7860927)
-bones/1/rotation = Quaternion(-0.39104062, 0.02946152, -0.01225598, 0.9198202)
-bones/2/rotation = Quaternion(0.19313794, -0.08012662, -0.014442742, 0.97778773)
-bones/3/rotation = Quaternion(0.7730788, 0.004545965, -0.0049852384, 0.6342742)
-bones/4/rotation = Quaternion(0.11705138, 0.003667803, 0.122660935, 0.98551506)
-bones/5/rotation = Quaternion(-0.104670495, 0.012529111, 0.024045385, 0.99413735)
-bones/6/position = Vector3(-3.4924597e-09, 0.40501803, -0.029767523)
+bones/0/position = Vector3(-2.1663412e-15, 0.49373347, -0.029767549)
+bones/0/rotation = Quaternion(0.46627706, 0.14477323, -0.03396451, 0.872051)
+bones/1/rotation = Quaternion(0.32517037, 0.07878162, 0.1695083, 0.9269977)
+bones/2/rotation = Quaternion(-0.43167135, -0.09610546, -0.15441284, 0.88350457)
+bones/3/rotation = Quaternion(0.53984505, -0.036412317, 0.0035035666, 0.8409692)
+bones/4/rotation = Quaternion(-0.27729338, 0.013531296, 0.1702154, 0.9454904)
+bones/5/rotation = Quaternion(0.09539328, -0.04363688, -0.013951849, 0.99438494)
+bones/6/position = Vector3(6.366463e-09, 0.4913779, -0.029767519)
 bones/6/rotation = Quaternion(0.6851068, 0.19305249, 0.6288369, -0.31292737)
-bones/7/rotation = Quaternion(-0.16672066, -0.13855197, -0.5982438, 0.7714351)
-bones/8/rotation = Quaternion(-0.15098126, -0.009757556, 0.5806351, 0.7999827)
-bones/9/rotation = Quaternion(0.36426762, 0.10166158, -0.34236717, 0.8600923)
-bones/10/position = Vector3(1.7462298e-08, 0.405018, -0.029767528)
+bones/7/rotation = Quaternion(-0.13292332, 0.26431876, -0.19440824, 0.9352392)
+bones/8/rotation = Quaternion(-0.11124942, -0.27532807, 0.21796285, 0.92968285)
+bones/9/rotation = Quaternion(0.058648683, -0.21614894, -0.36439136, 0.9039132)
+bones/10/position = Vector3(-3.6343408e-09, 0.49137786, -0.029767528)
 bones/10/rotation = Quaternion(0.6699323, -0.2387597, -0.61382306, -0.34264544)
-bones/11/rotation = Quaternion(-0.14701208, 0.22334848, 0.54845905, 0.79227245)
-bones/12/rotation = Quaternion(-0.31258792, 0.019657467, -0.4976901, 0.8088306)
-bones/13/rotation = Quaternion(0.32974535, -0.13789612, 0.25302204, 0.8990175)
+bones/11/rotation = Quaternion(0.04827712, 0.0078023076, 0.5762375, 0.81581795)
+bones/12/rotation = Quaternion(-0.3009172, 0.11507054, -0.51840997, 0.7921229)
+bones/13/rotation = Quaternion(-0.1488645, -0.04949739, 0.2321828, 0.9599378)
 
 [node name="HurtBox" type="Area3D" parent="." unique_id=191227794]
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=354666076]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.887315, 0)
-shape = SubResource("CylinderShape3D_2plf8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05505371, 0.5160293, -0.5153163)
+shape = SubResource("BoxShape3D_brvwf")
 
 [node name="DetectArea" type="Area3D" parent="." unique_id=413178283]
 collision_layer = 3

@@ -1,6 +1,8 @@
 extends Node
 class_name EnemyMoveState
 
+const GRAVITY : float = 9.8
+
 var ANIMATION_PLAYER : AnimationPlayer
 var TARGET : Enemy
 
@@ -16,6 +18,13 @@ func physics_update(_delta: float) -> void:
 
 func exit() -> void:
 	pass
+
+
+func apply_gravity(delta: float) -> void:
+	if not TARGET.is_on_floor():
+		TARGET.velocity.y += -GRAVITY * delta
+	else:
+		TARGET.velocity.y = 0
 
 
 func play_animation(anim_name: StringName, blend:=-1.0, speed:=1.0) -> void:

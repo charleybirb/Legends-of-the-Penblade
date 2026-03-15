@@ -19,6 +19,7 @@ func enter(_previous_state: EnemyMoveState) -> void:
 
 
 func physics_update(delta: float) -> void:
+	apply_gravity(delta)
 	if ANIMATION_PLAYER.current_animation == &"activate":
 		return
 	var to_player := PLAYER.global_transform.origin - TARGET.global_transform.origin

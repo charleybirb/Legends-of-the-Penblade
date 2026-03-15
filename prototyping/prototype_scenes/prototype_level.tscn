@@ -40,7 +40,7 @@ volumetric_fog_temporal_reprojection_enabled = false
 [node name="PrototypeLevel" type="Node3D" unique_id=1998099202]
 
 [node name="Player" parent="." unique_id=1351433348 instance=ExtResource("1_og3mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.947752, 1.5813873, -16.587606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.179076, 1.5813873, -15.623026)
 collision_mask = 3
 
 [node name="academy-courtyard" parent="." unique_id=270887046 instance=ExtResource("2_0hslt")]
@@ -49,19 +49,19 @@ collision_mask = 3
 environment = SubResource("Environment_ek0ic")
 
 [node name="FlowerFolly" parent="." unique_id=873657236 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15617979, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.92014, -2)
 
 [node name="FlowerFolly2" parent="." unique_id=418219533 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15617979, 9.413353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.92014, 9.413353)
 
 [node name="FlowerFolly3" parent="." unique_id=1066638068 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3238256, -0.15617979, 9.413353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3238256, 4.92014, 9.413353)
 
 [node name="FlowerFolly4" parent="." unique_id=463866127 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.317111, -0.15617979, 1.5460653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.317111, 4.92014, 1.5460653)
 
 [node name="FlowerFolly5" parent="." unique_id=1090366685 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0079865, -0.15617979, 1.5460653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0079865, 4.92014, 1.5460653)
 
 [node name="FlowerFolly6" parent="." unique_id=1319226124 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2306905, -0.15617979, 1.5460653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2306905, 4.92014, 1.5460653)
