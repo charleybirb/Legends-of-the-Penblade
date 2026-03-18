@@ -1,7 +1,7 @@
 extends Node
 class_name EnemyMoveState
 
-const GRAVITY : float = 9.8
+const GRAVITY : float = 25.0
 
 var ANIMATION_PLAYER : AnimationPlayer
 var TARGET : Enemy
@@ -29,6 +29,6 @@ func apply_gravity(delta: float) -> void:
 
 func play_animation(anim_name: StringName, blend:=-1.0, speed:=1.0) -> void:
 	if ANIMATION_PLAYER.current_animation == anim_name: return
-	#ANIMATION_PLAYER.pause()
+	ANIMATION_PLAYER.pause()
 	ANIMATION_PLAYER.play(anim_name, blend, speed)
-	print("playing ", anim_name)
+	#print("playing ", anim_name)

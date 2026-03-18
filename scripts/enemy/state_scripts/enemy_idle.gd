@@ -1,5 +1,5 @@
 extends EnemyMoveState
-
+class_name EnemyMoveIdle
 
 func enter(_previous_state: EnemyMoveState) -> void:
 	play_animation(&"idle")

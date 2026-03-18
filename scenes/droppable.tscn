@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ruc24qy8su2m"]
+
+[ext_resource type="Script" uid="uid://cctbobaem7xk6" path="res://scripts/droppable.gd" id="1_cn0pc"]
+[ext_resource type="Texture2D" uid="uid://q5ywvfaesgeh" path="res://assets/textures/ui_textures/health-green.png" id="2_62kli"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m77ws"]
+bounce = 0.43
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m77ws"]
+radius = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m77ws"]
+height = 0.41479492
+radius = 1.1889648
+
+[node name="Droppable" type="RigidBody3D" unique_id=1863452803 node_paths=PackedStringArray("sprite", "collect_area")]
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_m77ws")
+linear_damp = 1.0
+script = ExtResource("1_cn0pc")
+texture = ExtResource("2_62kli")
+sprite = NodePath("Sprite3D")
+collect_area = NodePath("CollectArea")
+
+[node name="Node" type="Node" parent="." unique_id=1984981550]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1799082123]
+shape = SubResource("SphereShape3D_m77ws")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=410179580]
+pixel_size = 0.02
+billboard = 1
+texture = ExtResource("2_62kli")
+
+[node name="CollectArea" type="Area3D" parent="." unique_id=1365474601]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectArea" unique_id=1694091494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049926758, 0)
+shape = SubResource("CylinderShape3D_m77ws")

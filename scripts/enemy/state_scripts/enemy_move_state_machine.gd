@@ -34,9 +34,6 @@ func _ready() -> void:
 
 
 func physics_update(delta: float) -> void:
-	#var relevance : StringName = current_move_state.check_relevance(input)
-	#if relevance != &"okay":
-		#switch_to(relevance)
 	current_move_state.physics_update(delta)
 
 

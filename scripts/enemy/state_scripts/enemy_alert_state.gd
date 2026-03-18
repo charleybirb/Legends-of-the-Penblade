@@ -11,4 +11,5 @@ func exit() -> void:
 
 
 func play_animation(anim_name: StringName, custom_blend : float = -1.0) -> void:
-	ANIMATION_PLAYER.play(anim_name, custom_blend)
+	if ANIMATION_PLAYER:
+		ANIMATION_PLAYER.play(anim_name, custom_blend)

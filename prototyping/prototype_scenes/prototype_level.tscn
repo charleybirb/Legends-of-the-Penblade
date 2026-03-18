@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://38cpuckweh1l" path="res://scenes/player.tscn" id="1_og3mw"]
 [ext_resource type="PackedScene" uid="uid://d2lcxqgaxo35g" path="res://assets/models/academy-courtyard.blend" id="2_0hslt"]
 [ext_resource type="PackedScene" uid="uid://b8ts6xd75p5n4" path="res://scenes/flower_folly.tscn" id="4_cvno0"]
+[ext_resource type="PackedScene" uid="uid://ruc24qy8su2m" path="res://scenes/droppable.tscn" id="4_s5g68"]
 
 [sub_resource type="Environment" id="Environment_ek0ic"]
 background_mode = 2
@@ -40,7 +41,7 @@ volumetric_fog_temporal_reprojection_enabled = false
 [node name="PrototypeLevel" type="Node3D" unique_id=1998099202]
 
 [node name="Player" parent="." unique_id=1351433348 instance=ExtResource("1_og3mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.179076, 1.5813873, -15.623026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.179076, 0.37672472, -15.623026)
 collision_mask = 3
 
 [node name="academy-courtyard" parent="." unique_id=270887046 instance=ExtResource("2_0hslt")]
@@ -49,19 +50,22 @@ collision_mask = 3
 environment = SubResource("Environment_ek0ic")
 
 [node name="FlowerFolly" parent="." unique_id=873657236 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.92014, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9967246, -7.090744)
 
 [node name="FlowerFolly2" parent="." unique_id=418219533 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.92014, 9.413353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9967246, 4.322609)
 
 [node name="FlowerFolly3" parent="." unique_id=1066638068 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3238256, 4.92014, 9.413353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3238256, 1.9967246, 4.322609)
 
 [node name="FlowerFolly4" parent="." unique_id=463866127 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.317111, 4.92014, 1.5460653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.317111, 1.9967246, -3.5446787)
 
 [node name="FlowerFolly5" parent="." unique_id=1090366685 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0079865, 4.92014, 1.5460653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0079865, 1.9967246, -3.5446787)
 
 [node name="FlowerFolly6" parent="." unique_id=1319226124 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2306905, 4.92014, 1.5460653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2306905, 1.9967246, -3.5446787)
+
+[node name="Dropable" parent="." unique_id=1863452803 instance=ExtResource("4_s5g68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3713136, 2, -22.366344)
