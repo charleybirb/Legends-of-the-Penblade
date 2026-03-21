@@ -50,22 +50,22 @@ collision_mask = 3
 environment = SubResource("Environment_ek0ic")
 
 [node name="FlowerFolly" parent="." unique_id=873657236 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9967246, -7.090744)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12665606, -7.090744)
 
-[node name="FlowerFolly2" parent="." unique_id=418219533 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9967246, 4.322609)
+[node name="FlowerFolly2" parent="." unique_id=391544055 instance=ExtResource("4_cvno0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1529007, -0.12665606, -7.090744)
 
-[node name="FlowerFolly3" parent="." unique_id=1066638068 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3238256, 1.9967246, 4.322609)
+[node name="FlowerFolly3" parent="." unique_id=454215421 instance=ExtResource("4_cvno0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1529007, -0.12665606, -4.210028)
 
-[node name="FlowerFolly4" parent="." unique_id=463866127 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.317111, 1.9967246, -3.5446787)
+[node name="FlowerFolly4" parent="." unique_id=2011549374 instance=ExtResource("4_cvno0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.986918, -0.12665606, -4.210028)
 
-[node name="FlowerFolly5" parent="." unique_id=1090366685 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0079865, 1.9967246, -3.5446787)
+[node name="FlowerFolly5" parent="." unique_id=322843638 instance=ExtResource("4_cvno0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.986918, -0.12665606, -0.6298816)
 
-[node name="FlowerFolly6" parent="." unique_id=1319226124 instance=ExtResource("4_cvno0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2306905, 1.9967246, -3.5446787)
+[node name="FlowerFolly6" parent="." unique_id=1128239712 instance=ExtResource("4_cvno0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7835283, -0.12665606, -0.6298816)
 
 [node name="Dropable" parent="." unique_id=1863452803 instance=ExtResource("4_s5g68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3713136, 2, -22.366344)

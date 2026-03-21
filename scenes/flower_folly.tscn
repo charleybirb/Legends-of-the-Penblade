@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://b2h4xuu4pvgj7" path="res://scripts/enemy/state_scripts/enemy_move_state_machine.gd" id="5_eeu4t"]
 [ext_resource type="Script" uid="uid://cgfkoikq3tvcv" path="res://scripts/enemy/state_scripts/enemy_idle.gd" id="6_eeu4t"]
 [ext_resource type="Script" uid="uid://bxjlsfs08rtfo" path="res://scripts/enemy/state_scripts/enemy_run.gd" id="7_7ro7b"]
+[ext_resource type="Script" uid="uid://cs02skdx0g2hu" path="res://scripts/enemy/state_scripts/enemy_attack.gd" id="8_7ro7b"]
+[ext_resource type="Script" uid="uid://ce550h4d53xis" path="res://scripts/enemy/state_scripts/enemy_fall.gd" id="8_766fi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0a6o"]
 radius = 0.2006836
@@ -78,6 +80,11 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64355, 0)
 shape = SubResource("CylinderShape3D_kdmxo")
 
+[node name="AttackRay" type="RayCast3D" parent="DetectArea" unique_id=1530308662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.679, 0)
+target_position = Vector3(0, 0, -5)
+collision_mask = 2
+
 [node name="HealthComponent" type="Node" parent="." unique_id=271317413 node_paths=PackedStringArray("HURTBOX", "INVINSIBILITY_TIMER")]
 script = ExtResource("3_chgtg")
 HURTBOX = NodePath("../HurtBox")
@@ -87,10 +94,10 @@ INVINSIBILITY_TIMER = NodePath("InvinsibilityTimer")
 wait_time = 0.1
 one_shot = true
 
-[node name="StateMachine" type="Node" parent="." unique_id=834016259 node_paths=PackedStringArray("DETECT_AREA", "ALERT_STATE_MACHINE", "MOVE_STATE_MACHINE")]
+[node name="StateMachine" type="Node" parent="." unique_id=834016259 node_paths=PackedStringArray("DETECT_AREA", "ATTACK_RAY", "MOVE_STATE_MACHINE")]
 script = ExtResource("4_chgtg")
 DETECT_AREA = NodePath("../DetectArea")
-ALERT_STATE_MACHINE = NodePath("")
+ATTACK_RAY = NodePath("../DetectArea/AttackRay")
 MOVE_STATE_MACHINE = NodePath("MoveState")
 
 [node name="MoveState" type="Node" parent="StateMachine" unique_id=760451732 node_paths=PackedStringArray("ANIMATION_PLAYER")]
@@ -106,8 +113,14 @@ script = ExtResource("7_7ro7b")
 [node name="Jump" type="Node" parent="StateMachine/MoveState" unique_id=1583318337]
 
 [node name="Attack" type="Node" parent="StateMachine/MoveState" unique_id=457193053]
+script = ExtResource("8_7ro7b")
 
-[node name="Fall" type="Node" parent="StateMachine/MoveState" unique_id=2097493795]
+[node name="Fall" type="Node" parent="StateMachine/MoveState" unique_id=2097493795 node_paths=PackedStringArray("fall_timer")]
+script = ExtResource("8_766fi")
+fall_timer = NodePath("FallTimer")
+
+[node name="FallTimer" type="Timer" parent="StateMachine/MoveState/Fall" unique_id=574263833]
+wait_time = 0.4
 
 [node name="Land" type="Node" parent="StateMachine/MoveState" unique_id=1105891343]
 

@@ -2525,7 +2525,7 @@ script = ExtResource("2_kg6dj")
 SHADOW = NodePath("../Shadow")
 
 [node name="DetectRay" type="RayCast3D" parent="Model" unique_id=1758235085]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0633404, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69761086, 0)
 target_position = Vector3(0, 0, 6)
 collision_mask = 4
 script = ExtResource("3_ujl30")

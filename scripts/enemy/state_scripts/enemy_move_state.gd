@@ -1,13 +1,15 @@
 extends Node
 class_name EnemyMoveState
 
+signal transition_to(new_state_name : StringName)
+
 const GRAVITY : float = 25.0
 
 var ANIMATION_PLAYER : AnimationPlayer
 var TARGET : Enemy
 
 
-func enter(_previous_move_state: EnemyMoveState) -> void:
+func enter(_previous_state_name: StringName) -> void:
 	pass
 
 func update(_delta: float) -> void:
@@ -20,9 +22,9 @@ func exit() -> void:
 	pass
 
 
-func apply_gravity(delta: float) -> void:
+func apply_gravity() -> void:
 	if not TARGET.is_on_floor():
-		TARGET.velocity.y += -GRAVITY * delta
+		transition_to.emit(&"fall")
 	else:
 		TARGET.velocity.y = 0
 

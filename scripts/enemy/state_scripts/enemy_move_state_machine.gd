@@ -11,8 +11,8 @@ var current_move_state : EnemyMoveState
 	&"idle": $Idle,
 	&"run": $Run,
 	#&"jump": $Jump,
-	#&"attack": $Attack,
-	#&"fall": $Fall,
+	&"attack": $Attack,
+	&"fall": $Fall,
 	#&"land": $Land,
 }
 
@@ -20,6 +20,10 @@ var current_move_state : EnemyMoveState
 func _on_player_detected(player: Player) -> void:
 	states[&"run"].PLAYER = player
 	switch_to(&"run")
+
+
+func _on_attack_triggered() -> void:
+	switch_to(&"attack")
 
 
 func _ready() -> void:
@@ -30,7 +34,8 @@ func _ready() -> void:
 		state.TARGET = TARGET
 		#state.VELOCITY_COMPONENT = VELOCITY_COMPONENT
 		state.ANIMATION_PLAYER = ANIMATION_PLAYER
-	current_move_state.enter(null)
+		state.transition_to.connect(switch_to)
+	current_move_state.enter(&"")
 
 
 func physics_update(delta: float) -> void:
@@ -44,8 +49,8 @@ func update(delta: float) -> void:
 func switch_to(new_state_name: StringName) -> void:
 	if current_move_state != states[new_state_name]:
 		current_move_state.exit()
-	var previous_state : EnemyMoveState = current_move_state
+	var previous_state_name : StringName = states.find_key(current_move_state)
 	current_move_state = states[new_state_name]
 	SignalBus.debug_updated.emit("MoveState", current_move_state.name)
-	current_move_state.enter(previous_state)
+	current_move_state.enter(previous_state_name)
 	#current_move_state.mark_enter_state()

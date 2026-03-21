@@ -10,8 +10,8 @@ const WEIGHT := 1.0
 
 var PLAYER : Player
 
-func enter(previous_state: EnemyMoveState) -> void:
-	if previous_state is EnemyMoveIdle:
+func enter(previous_state_name: StringName) -> void:
+	if previous_state_name == &"idle":
 		play_animation(&"activate")
 		await ANIMATION_PLAYER.animation_finished
 		play_animation(&"chase", 0.3)
@@ -20,7 +20,7 @@ func enter(previous_state: EnemyMoveState) -> void:
 
 
 func physics_update(delta: float) -> void:
-	apply_gravity(delta)
+	apply_gravity()
 	if ANIMATION_PLAYER.current_animation == &"activate" or ANIMATION_PLAYER == null:
 		return
 	var to_player := PLAYER.global_transform.origin - TARGET.global_transform.origin
